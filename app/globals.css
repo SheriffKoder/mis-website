@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -24,4 +24,53 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+} */
+
+/* we can use dark:text-etc, neon:text-etc, */
+/* hooks > (not needed)*/
+/* components > Theme switcher */
+/* taliwing.config */
+/* for flickering will install next-themes for folder providers >
+which will wrap the children in the layout */
+
+@layer base {
+
+  :root {
+    --background: #171717;
+    --foreground: #fffffff8; 
+    --primary: #7d2039;
+  }
+
+  .dark {
+    --background: #171717;
+    --foreground: #fffffff8; 
+    --primary: #7d2039;
+  }
+
+  .neon {
+    --background: #171717;
+    --foreground: #fffffff8; 
+    --primary: #7d2039;
+  }
+
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground
+  }
+}
+
+
+.scrollbar-track-y {
+  background-color: transparent !important;
+  /* width: 5px !important; */
+}
+
+.scrollbar-thumb-y {
+  background-color: rgb(157, 3, 47) !important;
+  width: 5px !important;
+  /* height: 200px !important; */
+  /* border: 1px solid rgb(0, 193, 132); */
+  /* border-radius: 0px !important; */
 }

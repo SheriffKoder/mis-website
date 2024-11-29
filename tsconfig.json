@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/SignUp/Form.tsx", "app/scroll/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/SignUp/Form.tsx", "app/scroll/page.jsx", "components/3dScenes/RobotScene.jsx"],
   "exclude": ["node_modules"]
 }

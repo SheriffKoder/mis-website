@@ -42,7 +42,7 @@ which will wrap the children in the layout */
   }
 
   .dark {
-    --background: #171717;
+    --background: #000000;
     --foreground: #fffffff8; 
     --primary: #7d2039;
   }
@@ -68,9 +68,10 @@ which will wrap the children in the layout */
 }
 
 .scrollbar-thumb-y {
-  background-color: rgb(157, 3, 47) !important;
+  background-color: #ffffff63 !important;
   width: 5px !important;
   /* height: 200px !important; */
   /* border: 1px solid rgb(0, 193, 132); */
   /* border-radius: 0px !important; */
 }
+

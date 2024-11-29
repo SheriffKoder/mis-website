@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import ThemeToggler from "@/components/ThemeToggler";
+import ThemeToggler from "@/components/BaseEffects/ThemeToggler";
 import { ThemeProvider } from "@/providers/theme-provider";
 import MainModal from "@/components/mainModal";
 
-import SmoothScrollbar from '../components/SmoothScrollbar';
+import SmoothScrollbar from '../components/BaseEffects/SmoothScrollbar';
 
 
 export const metadata: Metadata = {
@@ -21,9 +21,10 @@ export default function RootLayout({
   return (
     
     <html lang="en" className="" suppressHydrationWarning>
-      <body
-        className={``}
+      <body className={``}
       >
+
+
 
       <SmoothScrollbar>
 
@@ -33,9 +34,8 @@ export default function RootLayout({
         themes={["light", "dark", "neon"]}
         >
 
-          
+          <nav className="w-full h-[50px] bg-[#3535355d]"></nav>
 
-          <nav></nav>
 
           <MainModal/>
           {children}

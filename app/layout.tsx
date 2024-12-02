@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import MainModal from "@/components/mainModal";
 
 import SmoothScrollbar from '../components/BaseEffects/SmoothScrollbar';
+import Navbar from "@/components/Navbar";
 
 
 export const metadata: Metadata = {
@@ -20,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     
-    <html lang="en" className="" suppressHydrationWarning>
-      <body className={``}
+    <html lang="en" className="relative" suppressHydrationWarning>
+      <body className="Poppins"
       >
 
-
-
-      <SmoothScrollbar>
+      {/* <SmoothScrollbar> */}
 
         <ThemeProvider
         attribute="class"
@@ -34,14 +33,13 @@ export default function RootLayout({
         themes={["light", "dark", "neon"]}
         >
 
-          <nav className="w-full h-[50px] bg-[#3535355d]"></nav>
 
 
-          <MainModal/>
+          {/* <MainModal/> */}
           {children}
 
           <div className="absolute top-2 right-2">
-            <ThemeToggler/>
+            {/* <ThemeToggler/> */}
           </div>
 
 
@@ -50,7 +48,9 @@ export default function RootLayout({
 
         </ThemeProvider>
 
-     </SmoothScrollbar>
+        <Navbar/>
+
+     {/* </SmoothScrollbar> */}
 
       </body>
     </html>

@@ -1,7 +1,8 @@
 
+import Robot from '@/components/3dComponents/Robot'
 import Hero from '@/components/HomepageSections/Hero'
 import React from 'react'
-import RobotScene from "../components/3dScenes/RobotScene";
+import VaporWave from '@/components/HomepageSections/VaporWave'
 
 const page = () => {
 
@@ -9,33 +10,27 @@ const page = () => {
 
   return (
 
-    <main className=''>
+    <main className='z-[0]'>
 
-      <div className='fixed w-full'
-      id="fixed">
 
-        <div className='absolute top-0 left-0 w-full h-[100vh] flex items-center justify-center'>
-          <div className="w-[30vw] h-[30vw]">
-              <RobotScene/>
-          </div>
-        </div>
-
-        {/* <nav className="relative top-0 left-0 w-full h-[50px] bg-[#3535355d]"></nav> */}
-
+      <div className='w-full h-full absolute top-0 left-0 z-[-2]  overflow-hidden vaporWave'
+      id="#vaporWave">
+          <VaporWave/>
       </div>
 
+      <div className='px-[2rem] lg:px-[4rem] max-w-[1500px] mx-auto relative'>
+        <Robot/>
 
+        <section className='w-full h-[100vh]'>
+          <Hero/>
+        </section>
 
+        <section className='w-full h-[100vh] border-b border-blue-300'>
+          Section 2
+        </section>
 
-
-      <section className='w-full h-[100vh] border-b border-red-300
-      flex items-center justify-center'>
-        <Hero/>
-      </section>
-
-      <section className='w-full h-[100vh] border-b border-blue-300'>
-        Section 2
-      </section>
+      </div>
+      
     </main>
 
   )

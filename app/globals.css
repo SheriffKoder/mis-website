@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,24 +35,32 @@ body {
 /* for flickering will install next-themes for folder providers >
 which will wrap the children in the layout */
 
+
+
 @layer base {
 
   :root {
-    --background: #171717;
+    --background: #000000;
     --foreground: #fffffff8; 
-    --primary: #7d2039;
+    
+
   }
 
   .dark {
     --background: #000000;
     --foreground: #fffffff8; 
-    --primary: #7d2039;
+    --primary: #B5B5B5;
+    --secondary: #7C7C7C;
+    --accent1: #17D9FF;
+    --accent2: #1770FF;
+    --accent3: #9046D9;
+
   }
 
   .neon {
     --background: #171717;
     --foreground: #fffffff8; 
-    --primary: #7d2039;
+
   }
 
 }
@@ -62,6 +72,7 @@ which will wrap the children in the layout */
 }
 
 
+/* // Window scroll bar styling */
 .scrollbar-track-y {
   background-color: transparent !important;
   /* width: 5px !important; */
@@ -75,3 +86,160 @@ which will wrap the children in the layout */
   /* border-radius: 0px !important; */
 }
 
+/* ////////////////////////////////////////////////////////////////////// */
+/* Website's nav bar display on scroll up */
+.main-tool-bar {
+  transition: ease 0.4s;
+}
+.navShow {
+  margin-top: -100px;
+}
+
+.ActiveNavLink::after {
+  content: "";
+
+  width: 3px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: scale(0) translateX(-50%);
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* neon */
+  box-shadow:  0 0 1px #17D9FF,
+  0 0 4px #17D9FF;
+
+}
+
+.ActiveNavLink:hover::after {
+  content: "";
+
+  width: 40px;
+  height: 2px;
+  background-color: #17D9FF;
+  position: absolute;
+  /* border-radius: 50%; */
+  bottom: -0.75rem;
+  left: 50%;
+  transform: scale(0) translateX(-50%);
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+
+  transform: scale(1) translateX(-50%);
+  
+
+
+}
+
+
+/* https://www.youtube.com/shorts/IZWoZZwRw14?app=desktop */
+.neon_button {
+  /* box-shadow:  0 0 1px #17D9FF,
+              0 0 4px #17D9FF; */
+  background-color: #17D9FF;
+  color: #032127c0;
+  font-weight: 600;
+}
+
+.neon_button:hover {
+  box-shadow:  0 0 2px #17D9FF,
+              0 0 6px #17D9FF;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+
+.vaporWave {
+  opacity: 0;
+  animation-delay: 1s;
+  animation-name: fadeIn_keyframe;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* animation used in @home/projects description, @projects cards description */
+
+@keyframes fadeIn_keyframe {
+  0% { 
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+
+/* ////////////////////////////////////////////////////////////////////// */
+.Heading1 {
+  @apply font-normal text-[13vw] leading-[12vw] md:text-[min(110px,8vw)] md:leading-[min(100px,7vw)] Montserrat
+  color1
+}
+
+.Paragraph1 {
+  @apply font-extralight text-[3vw] leading-[3vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(16px,2vw)] md:leading-[min(22px,2vw)] 
+  Poppins color3
+}
+
+.gradient_text {
+  background: -webkit-linear-gradient(
+    
+  0deg, 
+  
+  #9046D9
+  
+  0%, 
+  
+  #17D9FF
+
+
+  100%
+  );  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.Poppins {
+  @apply font-['Poppins']
+}
+
+.Montserrat {
+  @apply font-['Montserrat']
+}
+
+.color1 {
+  @apply text-[#ffffff];
+}
+
+.color2 {
+  @apply text-[#B5B5B5];
+}
+
+
+.color3 {
+  @apply text-[#7C7C7C];
+}
+
+
+.color4 {
+  @apply text-[#4E4E4E];
+}
+
+
+.color5 {
+  @apply text-[#000000];
+}
+
+.accent1 {
+  @apply text-[#17D9FF]
+}
+
+.accent2 {
+  @apply text-[#1770FF]
+}
+
+.accent2 {
+  @apply text-[#9046D9]
+}

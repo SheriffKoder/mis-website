@@ -1,7 +1,9 @@
 
 let nav_links = [
-    { text: "Properties", href: "/properties/all", aria: "check our properties"},
-
+    { text: "Services", href: "#services", aria: "know more about the services we offer"},
+    // { text: "Measures", href: "#measures", aria: "our achievements"},
+    { text: "How it works", href: "#actionPlan", aria: "our action plan"},
+    { text: "Testimonials", href: "#testimonials", aria: "what our clients says about us"},
 ]
 
 let backgrounds = {

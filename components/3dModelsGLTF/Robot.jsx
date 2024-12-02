@@ -6,16 +6,104 @@ Source: https://sketchfab.com/3d-models/robot-eva-855370cceb594490b8375698098d6a
 Title: robot Eva
 */
 
-import React, { useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from "three";
 
 export function Robot(props) {
-  const { nodes, materials } = useGLTF('/robot_eva.glb')
+  const { nodes, materials } = useGLTF('/robot_eva.glb');
+
+  // Mouse tracking
+
+    const [scaledX, setScaledX] = useState(0);
+    const [scaledY, setScaledY] = useState(0);
+    const [previousScaledX, setPreviousScaledX] = useState(0);
+    const [previousScaledY, setPreviousScaledY] = useState(0);
+  
+
+    useEffect(() => {
+      // Mousemove handler
+      const handleMouseMove = (e) => {
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+  
+        // Calculate the normalized x position (0 to 1) and map to the range -0.5 to 0.5
+        const normalizedX = mouseX / window.innerWidth;
+        const newScaledX = normalizedX - 0.5;
+  
+        // Calculate the normalized y position (0 to 1) and map to the reversed range 0.3 to -0.3
+        const normalizedY = mouseY / window.innerHeight;
+        const newScaledY = -(normalizedY * 0.6 - 0.3);
+  
+        // Check if the difference in X is greater than or equal to 0.02
+        const diffX = Math.abs(newScaledX - previousScaledX);
+        if (diffX >= 0.02) {
+          setScaledX(newScaledX);
+          setPreviousScaledX(newScaledX);
+          console.log("Scaled X:", newScaledX);
+        }
+  
+        // Check if the difference in Y is greater than or equal to 0.02
+        const diffY = Math.abs(newScaledY - previousScaledY);
+        if (diffY >= 0.02) {
+          setScaledY(newScaledY);
+          setPreviousScaledY(newScaledY);
+          console.log("Scaled Y:", newScaledY);
+        }
+      };
+  
+      // When the window loses focus (mouse likely out of window)
+      const handleBlur = () => {
+        setScaledX(0);
+        setScaledY(0);
+        setPreviousScaledX(0);
+        setPreviousScaledY(0);
+        console.log("Mouse likely out of window. Scaled X and Y set to 0.");
+      };
+  
+      // When the window gains focus (mouse likely back inside)
+      const handleFocus = () => {
+        console.log("Window focused. Resuming mouse tracking.");
+      };
+  
+      // Add the event listeners
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("blur", handleBlur);
+      window.addEventListener("focus", handleFocus);
+  
+      // Cleanup the event listeners when the component unmounts
+      return () => {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("blur", handleBlur);
+        window.removeEventListener("focus", handleFocus);
+      };
+    }, [previousScaledX, previousScaledY]); // Dependencies include both X and Y to compare them
+  
+
+  // Section 1
+  // left right
+  // -0.5 >> e.clientX of 0
+  // 0.5 >> e.clientX = window.innerWidth
+
+  // up down
+  // 0.3 = 0
+  // -0.3 with -1, 0.2 >> window.innerHeight
+
+
+{/* You are an expert javascript developer. Look i have a mousemove event listener. 
+  i receive coordinates for the movements of the mouse on x axis from 0 to window.innerWidth. 
+  this determines the start and end of the x-axis on the screen. i want to relate the location 
+  on the axis to give output from -0.5 to 0.5, I want to update the scale only if there is 0.02 difference in scaleX in both directions
+ This is what I wanted. Thanks. Now I want to add on to this the y-axis which should be from 0 to window.innerHeight and outputs from 0.3 to -0.3*/}
+
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null}
+    // rotation={[0,-1,0]}
+    >
 
         {/* Head part  rotation X, Y=right/-ve left, Z=up/-ve down*/}
-        <group rotation={[0,0,0]}>
+        <group rotation={[0,scaledX,scaledY]} position={[0,0.2,0]}>
             {/* Hoodie */}
             <mesh
                 castShadow

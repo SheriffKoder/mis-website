@@ -30,7 +30,7 @@ const SmoothScrollbar = ({ children }) => {
 
         // Allow fixed elements to work with the scrollbar
         var fixedElem1 = document.getElementById('RobotContainer');
-        var fixedElem2 = document.querySelector('.main-tool-bar');
+        // var fixedElem2 = document.querySelector('.main-tool-bar');
 
 
         bodyScrollBar.addListener(function(status) {

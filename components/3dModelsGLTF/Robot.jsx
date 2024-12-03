@@ -8,7 +8,6 @@ Title: robot Eva
 
 import React, { useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
-import * as THREE from "three";
 
 export function Robot(props) {
   const { nodes, materials } = useGLTF('/robot_eva.glb');
@@ -40,7 +39,7 @@ export function Robot(props) {
         if (diffX >= 0.02) {
           setScaledX(newScaledX);
           setPreviousScaledX(newScaledX);
-          console.log("Scaled X:", newScaledX);
+          // console.log("Scaled X:", newScaledX);
         }
   
         // Check if the difference in Y is greater than or equal to 0.02
@@ -48,7 +47,7 @@ export function Robot(props) {
         if (diffY >= 0.02) {
           setScaledY(newScaledY);
           setPreviousScaledY(newScaledY);
-          console.log("Scaled Y:", newScaledY);
+          // console.log("Scaled Y:", newScaledY);
         }
       };
   
@@ -58,12 +57,12 @@ export function Robot(props) {
         setScaledY(0);
         setPreviousScaledX(0);
         setPreviousScaledY(0);
-        console.log("Mouse likely out of window. Scaled X and Y set to 0.");
+        // console.log("Mouse likely out of window. Scaled X and Y set to 0.");
       };
   
       // When the window gains focus (mouse likely back inside)
       const handleFocus = () => {
-        console.log("Window focused. Resuming mouse tracking.");
+        // console.log("Window focused. Resuming mouse tracking.");
       };
   
       // Add the event listeners

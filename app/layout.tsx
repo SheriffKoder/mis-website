@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ThemeToggler from "@/components/BaseEffects/ThemeToggler";
 import { ThemeProvider } from "@/providers/theme-provider";
-import MainModal from "@/components/mainModal";
 
-import SmoothScrollbar from '../components/BaseEffects/SmoothScrollbar';
 import Navbar from "@/components/Navbar";
 
 
@@ -25,7 +23,6 @@ export default function RootLayout({
       <body className="Poppins"
       >
 
-      {/* <SmoothScrollbar> */}
 
         <ThemeProvider
         attribute="class"
@@ -35,11 +32,10 @@ export default function RootLayout({
 
 
 
-          {/* <MainModal/> */}
           {children}
 
-          <div className="absolute top-2 right-2">
-            {/* <ThemeToggler/> */}
+          <div className="absolute top-2 right-2 hidden">
+            <ThemeToggler/>
           </div>
 
 
@@ -48,9 +44,9 @@ export default function RootLayout({
 
         </ThemeProvider>
 
-        <Navbar/>
+        {/* //positioned here to have higher index */}
+        <Navbar/> 
 
-     {/* </SmoothScrollbar> */}
 
       </body>
     </html>

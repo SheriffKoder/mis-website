@@ -1,13 +1,15 @@
 "use client"
 
-import { useEffect, useRef } from 'react'
-import { Canvas, useLoader, useFrame } from "@react-three/fiber";
+// import { useEffect, useRef } from 'react'
+// import { useLoader, useFrame } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 // import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { ContactShadows, Environment, Float, Preload, useGLTF} from "@react-three/drei";
+// import { ContactShadows, Environment, Preload, useGLTF} from "@react-three/drei";
+import { Float } from "@react-three/drei";
 
-import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
-import { OrbitControls } from '@react-three/drei'
-import { useTexture } from '@react-three/drei';
+// import { TextureLoader } from 'three/src/loaders/TextureLoader.js'
+// import { OrbitControls } from '@react-three/drei'
+// import { useTexture } from '@react-three/drei';
 
 // import {OptPhone} from "./optPhone";
 // import {OptPhone42} from "./optPhone42";
@@ -48,58 +50,58 @@ function RobotControls () {
     )
 }
 
-function Shape ({orbitControl, texture_1_url, texture_2_url}) {
+// function Shape ({orbitControl, texture_1_url, texture_2_url}) {
 
 
-    //////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////
-    const springOptions = {
-        damping: 60,
-    }
+//     //////////////////////////////////////////////////////////////////////////////
+//     //////////////////////////////////////////////////////////////////////////////
+//     const springOptions = {
+//         damping: 60,
+//     }
 
     
-    const mouse = {
-        rotation_y: useSpring(useMotionValue(-0.75), springOptions),
-        scale: useSpring(useMotionValue(1), springOptions),
-        position_x: useSpring(useMotionValue(isLargeScreen() ? 1.7 : 0), springOptions),
+//     const mouse = {
+//         rotation_y: useSpring(useMotionValue(-0.75), springOptions),
+//         scale: useSpring(useMotionValue(1), springOptions),
+//         position_x: useSpring(useMotionValue(isLargeScreen() ? 1.7 : 0), springOptions),
 
-    };
-
-
-    //////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////
-
-    // npx gltfjsx public/3d/computer/opt-iphone3.glb -o components/myModels/optPhone.jsx -r public
-    // const gltf1 = useLoader(GLTFLoader, "./3d/computer/imac.glb");    //gltf.scene
-    // const gltf2 = useGLTF("./3d/computer/imac/scene.gltf");
-
-    // const texture_1 = useTexture(`${texture_1_url}`);  //texture importing method fixes the brightness issue
-    // const texture_2 = useTexture(`${texture_2_url}`);  //texture importing method fixes the brightness issue
-
-    return (
+//     };
 
 
-        <motion.group
-        // rotation-y={mouse.rotation_y} scale={mouse.scale} position-x={mouse.position_x}
-        >
+//     //////////////////////////////////////////////////////////////////////////////
+//     //////////////////////////////////////////////////////////////////////////////
 
-            {/* <OptImac
-            position={[0,0,0.0]}
-            scale={7}
-            myWallpaper={texture_1}
-            /> */}
+//     // npx gltfjsx public/3d/computer/opt-iphone3.glb -o components/myModels/optPhone.jsx -r public
+//     // const gltf1 = useLoader(GLTFLoader, "./3d/computer/imac.glb");    //gltf.scene
+//     // const gltf2 = useGLTF("./3d/computer/imac/scene.gltf");
 
-            {/* <OptPhone42
-            scale={1.5}
-            position={[1.8,-1,0.8]}                           
-            rotation={[-0.1,3.15,0]} 
-            myWallpaper={texture_2}
-            /> */}
+//     // const texture_1 = useTexture(`${texture_1_url}`);  //texture importing method fixes the brightness issue
+//     // const texture_2 = useTexture(`${texture_2_url}`);  //texture importing method fixes the brightness issue
 
-        </motion.group>
+//     return (
 
-    )
-}
+
+//         <motion.group
+//         // rotation-y={mouse.rotation_y} scale={mouse.scale} position-x={mouse.position_x}
+//         >
+
+//             {/* <OptImac
+//             position={[0,0,0.0]}
+//             scale={7}
+//             myWallpaper={texture_1}
+//             /> */}
+
+//             {/* <OptPhone42
+//             scale={1.5}
+//             position={[1.8,-1,0.8]}                           
+//             rotation={[-0.1,3.15,0]} 
+//             myWallpaper={texture_2}
+//             /> */}
+
+//         </motion.group>
+
+//     )
+// }
 
 
 export default function RobotScene() {

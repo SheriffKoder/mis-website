@@ -1,8 +1,8 @@
 "use client"
-import { useGSAP } from "@gsap/react";
-import gsap from 'gsap'
-import React, { useEffect, useRef } from 'react'
-import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
+// import { useGSAP } from "@gsap/react";
+// import gsap from 'gsap'
+import React, { useEffect } from 'react'
+// import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 
 // import "./SmoothRevealNav.css"
 
@@ -78,9 +78,9 @@ const Page = () => {
                 <ul className='max-w[400px] flex flex-row justify-evenly gap-[max(4vw,2rem)]
                 text-xs'>
                     {
-                    nav_links.map((link)=> (
-                        <li>
-                            <Link href={link.href} aria-label={link.aria}
+                    nav_links.map((link, index)=> (
+                        <li key={index}>
+                            <Link href={link.href}  aria-label={link.aria}
                             className=" ActiveNavLink relative color2">{link.text}</Link>
                         </li>
                     ))

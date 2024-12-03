@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/SignUp/Form.tsx", "app/scroll/page.jsx", "components/3dScenes/RobotScene.jsx", "components/Navbar.jsx", "components/HomepageSections/VaporWave.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/SignUp/Form.tsx", "app/scroll/page.jsx", "components/3dScenes/RobotScene.jsx", "components/Navbar.jsx", "components/HomepageSections/VaporWave.jsx", "app/test/page.jsx"],
   "exclude": ["node_modules"]
 }

@@ -5,6 +5,7 @@ import GradientButton from '../GradientButton'
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { easeInOut, easeOut } from 'framer-motion'
+import BrandSlider from './BrandSlider'
 
 const Hero = () => {
 
@@ -82,7 +83,7 @@ const Hero = () => {
     <section className='h-full flex flex-col items-start justify-center
     gap-4' id="section_hero">
 
-        <h1 className='Heading1 flex flex-col items-start justify-center'
+        <h1 className='Heading1 flex flex-col items-start justify-center mt-[5rem]'
         id="hero_text1">
           <span>Modern</span>
           <span>Intelligence</span>
@@ -104,6 +105,10 @@ const Hero = () => {
             <GradientButton text={"■ Explore all features"} />
           </span>
 
+        </div>
+
+        <div className='w-full overflow-hidden mt-[5rem] opacity-60'>
+          <BrandSlider/> 
         </div>
 
 

@@ -10,7 +10,7 @@
 </ErrorBoundary> */}
 
 
-const GeneralError = ({error, reset}: {
+const GeneralError = ({error}: {
   error: Error & { digest?: string }
   reset: () => void
 }) => {

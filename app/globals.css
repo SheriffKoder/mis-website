@@ -170,6 +170,59 @@ which will wrap the children in the layout */
   }
 }
 
+/* dark sides on brand slider, used in the wrapper in the hero component */
+#brandStrip::after {
+  /* border: 1px solid rgb(255, 0, 0); */
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top:0;
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15449929971988796) 90%, rgba(0,0,0,0.8743872549019608) 100%);
+
+}
+
+.sideFadeGradient::after {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 100%;
+  left: -1.7rem;
+  top:0;
+  /* -webkit-box-shadow: inset 0px 0px 36px 52px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 0px 36px 52px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 36px 52px rgba(0,0,0,1); */
+}
+
+.valueCard1 {
+background: radial-gradient(circle at 100% 100%, #141414 0, #141414 4px, transparent 4px) 0% 0%/6px 6px no-repeat,
+            radial-gradient(circle at 0 100%, #141414 0, #141414 4px, transparent 4px) 100% 0%/6px 6px no-repeat,
+            radial-gradient(circle at 100% 0, #141414 0, #141414 4px, transparent 4px) 0% 100%/6px 6px no-repeat,
+            radial-gradient(circle at 0 0, #141414 0, #141414 4px, transparent 4px) 100% 100%/6px 6px no-repeat,
+            linear-gradient(#141414, #141414) 50% 50%/calc(100% - 4px) calc(100% - 12px) no-repeat,
+            linear-gradient(#141414, #141414) 50% 50%/calc(100% - 12px) calc(100% - 4px) no-repeat,
+            linear-gradient(136deg, rgba(23,217,255,0) 0%, #9046d9 100%);
+border-radius: 6px;
+padding: 18px;
+box-sizing: border-box;
+}
+.valueCard2::before {
+  /* border: 1px solid red; */
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:2px;
+  left: 2px;
+  border-radius: 10px;
+
+  background: rgb(23,217,255);
+  background: linear-gradient(312deg, rgba(23,217,255,0.48783263305322133) 0%, rgba(134,82,220,0.20211834733893552) 15%, rgba(144,70,217,0.10127801120448177) 100%);
+
+}
 
 /* ////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////// */
@@ -180,9 +233,26 @@ which will wrap the children in the layout */
   color1
 }
 
+/* section header */
+.Heading2 {
+  @apply font-normal text-[8vw] md:text-[min(55px,4vw)] Montserrat
+  color1
+}
+
+/* card header */
+.Heading3 {
+  @apply font-normal text-[min(4vw,18px)] md:text-[min(24px,3vw)]
+  color1
+}
+
 .Paragraph1 {
   @apply font-extralight text-[3vw] leading-[3vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(16px,2vw)] md:leading-[min(22px,2vw)] 
   Poppins color3
+}
+
+.Paragraph2 {
+  @apply font-extralight text-[min(3vw,13px)] leading-[5vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(14px,2vw)] md:leading-[min(22px,2vw)] 
+  Poppins color1
 }
 
 .gradient_text {
@@ -251,3 +321,43 @@ which will wrap the children in the layout */
 
 
 
+.GSAPbox {
+  width: 100px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  background-color: white;
+  border-radius: 8px;
+  color: #222;
+  font-weight: 700;
+  margin-left: 20px;
+  will-change: transform;
+}
+.GSAPbox.active {
+  background-color: orange;
+  border: 2px solid white;
+}
+
+.GSAPcontainer {
+  width: 500%;
+  height: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #222;
+}
+
+.GSAPpanel {
+  width: 100vw;
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.GSAPcenterBox {
+  width: 400px;
+  height: 400px;
+  background: black;
+}

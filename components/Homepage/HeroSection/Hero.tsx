@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import ColoredButton from '../ColoredButton'
-import GradientButton from '../GradientButton'
+import ColoredButton from '../../ColoredButton'
+import GradientButton from '../../GradientButton'
 import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { easeInOut, easeOut } from 'framer-motion'
@@ -107,7 +107,8 @@ const Hero = () => {
 
         </div>
 
-        <div className='w-full overflow-hidden mt-[5rem] opacity-60'>
+        <div className='w-full overflow-hidden mt-[5rem] opacity-60 relative'
+        id="brandStrip">
           <BrandSlider/> 
         </div>
 

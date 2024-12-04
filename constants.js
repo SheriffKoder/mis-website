@@ -6,6 +6,38 @@ let nav_links = [
     { text: "Testimonials", href: "#testimonials", aria: "what our clients says about us"},
 ]
 
+const allText = {
+  
+  hero: {
+    header: ``,
+    paragraph: ``,
+    button1: ``,
+    button2: ``
+  },
+  sectionTwo: {
+    header: `What Value we offer`,
+    paragraph: `We specialize in saving people time through innovative automation and tailored services. 
+Our expertise spans web development, automation, video editing, and social media management, 
+enabling our clients to streamline their operations and reach new heights.`
+  }
+
+}
+
+let sectionTwo_cardsContent = [
+  {
+    name: "Automation",
+    content: "We specialize in saving people time through innovative automation, our clients to streamline their operations and reach new heights",
+  },
+  {
+    name: "Automation",
+    content: "We specialize in saving people time through innovative automation, our clients to streamline their operations and reach new heights",
+  },
+  {
+    name: "Automation",
+    content: "We specialize in saving people time through innovative automation, our clients to streamline their operations and reach new heights",
+  }
+]
+
 let backgrounds = {
 
 }
@@ -41,7 +73,9 @@ module.exports = {
     ...colors,
     nav_links,
     backgrounds,
-    goals
+    goals,
+    sectionTwo_cardsContent,
+    allText
 
 }
 

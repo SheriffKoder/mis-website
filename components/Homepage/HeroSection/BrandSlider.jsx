@@ -78,6 +78,7 @@ const BrandSlider = () => {
     <div ref={slider} className="relative whitespace-nowrap flex flex-row"
     onMouseEnter={()=> factor.current = 0.01}
     onMouseLeave={()=> factor.current = 0.025}
+    id=""
     >
         <span ref={firstText} className="relative left-[0]"> 
             <div className='w-[100vw] h-[50px] lg:h-[75px] 
@@ -103,6 +104,7 @@ const BrandSlider = () => {
             </div>
         </span>
     </div>
+
 
 
   )

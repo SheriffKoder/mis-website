@@ -1,8 +1,9 @@
 
-import Robot from '@/components/3dComponents/Robot'
-import Hero from '@/components/HomepageSections/Hero'
+import Robot from '@/components/Homepage/3dComponents/Robot'
+import Hero from '@/components/Homepage/HeroSection/Hero'
 import React from 'react'
-import VaporWave from '@/components/HomepageSections/VaporWave'
+import VaporWave from '@/components/Homepage/HeroSection/VaporWave'
+import SectionTwo from '@/components/Homepage/SectionTwo/SectionTwo'
 
 const page = () => {
 
@@ -19,14 +20,14 @@ const page = () => {
       </div>
 
       <div className='px-[2rem] lg:px-[4rem] max-w-[1500px] mx-auto relative'>
-        <Robot/>
+        {/* <Robot/> */}
 
         <section className='w-full h-[100vh]'>
           <Hero/>
         </section>
 
-        <section className='w-full h-[100vh] border-b border-blue-300'>
-          Section 2
+        <section className='w-full h-[100vh]'>
+          <SectionTwo/>
         </section>
 
       </div>

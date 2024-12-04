@@ -1,4 +1,18 @@
 
+/*
+
+Hierarchy
+H1 hero
+h2 section header
+h3 card header/name
+
+
+
+
+
+
+*/
+
 let nav_links = [
     { text: "Services", href: "#services", aria: "know more about the services we offer"},
     // { text: "Measures", href: "#measures", aria: "our achievements"},
@@ -19,6 +33,10 @@ const allText = {
     paragraph: `We specialize in saving people time through innovative automation and tailored services. 
 Our expertise spans web development, automation, video editing, and social media management, 
 enabling our clients to streamline their operations and reach new heights.`
+  },
+  sectionThree: {
+    header: `It's all about numbers`,
+    paragraph: `Enabling our clients to streamline their operations and reach new heights`
   }
 
 }
@@ -35,6 +53,24 @@ let sectionTwo_cardsContent = [
   {
     name: "Automation",
     content: "We specialize in saving people time through innovative automation, our clients to streamline their operations and reach new heights",
+  }
+]
+
+let sectionThree_cardsContent = [
+  {
+    name: "Projects",
+    content: "all our projects",
+    number: 1000
+  },
+  {
+    name: "Clients",
+    content: "all our projects",
+    number: 300
+  },
+  {
+    name: "Experience",
+    content: "all our projects",
+    number: 10,
   }
 ]
 
@@ -75,7 +111,8 @@ module.exports = {
     backgrounds,
     goals,
     sectionTwo_cardsContent,
-    allText
+    allText,
+    sectionThree_cardsContent
 
 }
 

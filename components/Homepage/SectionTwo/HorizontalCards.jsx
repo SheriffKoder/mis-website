@@ -20,7 +20,7 @@ const HorizontalCards = () => {
         xPercent: -100 * (sections2.length -1),
         ease: "none", // progress evenly distributed over time, important
         scrollTrigger: {
-            trigger: ".container2",
+            trigger: "#section2",
             pin: true,
             scrub: 1,
             // slide in automatically when middle of the section
@@ -34,7 +34,7 @@ const HorizontalCards = () => {
 
     gsap.to(sections2, {
         scrollTrigger: {
-            trigger: "section2",
+            trigger: "#section2",
             // scrub: true,
             start: "center 60%",
             end: "top top",
@@ -50,20 +50,20 @@ const HorizontalCards = () => {
   
       });
 
-    gsap.to(".box-1", {
-        // y: -130,
-        opacity: 0.5,
-        duration: 1,
-        // ease: "elastic",
-        scrollTrigger: {
-          trigger: ".box-1",
-          containerAnimation: scrollTween,  // to get horizontal markers for the box
-          start: "left center",
-          toggleActions: "play none none reset",
-          id: "1",
-        //   markers: true,
-        }
-      });
+    // gsap.to(".box-1", {
+    //     // y: -130,
+    //     opacity: 0.5,
+    //     duration: 1,
+    //     // ease: "elastic",
+    //     scrollTrigger: {
+    //       trigger: ".box-1",
+    //       containerAnimation: scrollTween,  // to get horizontal markers for the box
+    //       start: "left center",
+    //       toggleActions: "play none none reset",
+    //       id: "1",
+    //     //   markers: true,
+    //     }
+    //   });
 
     },[]);
 
@@ -77,31 +77,34 @@ const HorizontalCards = () => {
         <div>
             {/* <div className="w-full h-[100vh] bg-black">
             </div> */}
-            <div className=" relative ">
+            <div className="relative">
 
-                <div className="sideFadeGradient w-full flex items-center text-xl overflow-hidden ">
+                <div className="sideFadeGradient w-full flex items-center text-xl overflow-hidden">
                 {
                 sectionTwo_cardsContent.map((cardContent, index)=> (
                     <div className='section2 min-w-[min(70vw,400px)] h-[min(100vw,400px)]  md:min-w-[min(60vw,600px)] md:h-[min(60vw,500px)] md:ml-[1rem] 
-                    flex items-center py-[2rem] translate-y-[50px] opacity-0
+                    flex items-center translate-y-[50px] opacity-0
                     ' key={index}>
                         
-                        {/* border border-[rgba(255,255,255,0.06)] */}
-                        <div className="h-[90%] w-[97%]  rounded-lg
-                        flex flex-col p-[0px] md:p-[2rem] gap-[1.5rem] text-white  valueCard2 relative bg-[rgb(8,8,8)]
-                        
-                        ">
 
-                            <div className=" rounded-lg py-2 px-6 w-fit">
-                                <h4 className="gradient_text Heading3">{cardContent.name}</h4>
+                        <div className="valueCard1 h-[90%] w-[97%] rounded-lg">
+                            <div className=" rounded-lg
+                            flex flex-col p-[0px] md:p-[2rem] gap-[1.5rem] text-white  valueCard2
+                            ">
+
+                                <div className=" rounded-lg py-2 px-6 w-fit">
+                                    <h3 className="gradient_text Heading3 border-b pb-[1rem] border-[#289eff]">{cardContent.name}</h3>
+                                </div>
+                                <p className="w-full max-w-[400px] text-sm Paragraph2 ml-7">
+                                    {cardContent.content}
+                                </p>
+                                {/* <div className="box-1 w-[100px] h-[100px] bg-black">
+
+                                </div> */}
                             </div>
-                            <p className="w-full max-w-[400px] text-sm Paragraph2 ml-4">
-                                {cardContent.content}
-                            </p>
-                            {/* <div className="box-1 w-[100px] h-[100px] bg-black">
-
-                            </div> */}
                         </div>
+                        {/* border border-[rgba(255,255,255,0.06)] */}
+
                         
 
                         
@@ -137,8 +140,7 @@ const HorizontalCards = () => {
                 Deleniti esse aut atque sapiente! Accusantium nisi culpa delectus alias, explicabo atque voluptas facere omnis. Eaque non repellat dolorem sit laborum amet numquam voluptatem velit, quas cumque. Autem, reiciendis impedit?
                 </div> */}
             </div>
-            <div className="w-full h-[100vh] bg-black">
-            </div>
+
         </div>
 
   )

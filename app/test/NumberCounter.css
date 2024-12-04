@@ -1,0 +1,38 @@
+.number-counter {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  
+  .number-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .number {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .number.previous {
+    transform: translateY(-100%); /* Move up */
+    opacity: 0; /* Fade out */
+  }
+  
+  .number.current {
+    transform: translateY(0%); /* Stay in place */
+    opacity: 1; /* Fully visible */
+  }
+  

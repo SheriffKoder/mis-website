@@ -9,6 +9,9 @@ Title: robot Eva
 import React, { useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 
+import * as THREE from "three"
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
+
 export function Robot(props) {
   const { nodes, materials } = useGLTF('/robot_eva.glb');
 
@@ -19,6 +22,11 @@ export function Robot(props) {
     const [previousScaledX, setPreviousScaledX] = useState(0);
     const [previousScaledY, setPreviousScaledY] = useState(0);
   
+  // Neon
+    const [luminanceThreshold, setLuminanceThreshold] = useState(0);
+    const [intensity, setIntensity] = useState(0.2);
+    const [radius, setRadius] = useState(0.35);
+    const shiningBlue = new THREE.Color(0.3, 1, 13);
 
     useEffect(() => {
       // Mousemove handler
@@ -66,9 +74,17 @@ export function Robot(props) {
       };
   
       // Add the event listeners
-      window.addEventListener("mousemove", handleMouseMove);
-      window.addEventListener("blur", handleBlur);
-      window.addEventListener("focus", handleFocus);
+      if (props.robotMouseTrack) {
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("blur", handleBlur);
+        window.addEventListener("focus", handleFocus);
+      }
+
+      if (!props.robotMouseTrack) {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("blur", handleBlur);
+        window.removeEventListener("focus", handleFocus);
+      }
   
       // Cleanup the event listeners when the component unmounts
       return () => {
@@ -76,7 +92,7 @@ export function Robot(props) {
         window.removeEventListener("blur", handleBlur);
         window.removeEventListener("focus", handleFocus);
       };
-    }, [previousScaledX, previousScaledY]); // Dependencies include both X and Y to compare them
+    }, [previousScaledX, previousScaledY, props.robotMouseTrack]); // Dependencies include both X and Y to compare them
   
 
   // Section 1
@@ -131,7 +147,23 @@ export function Robot(props) {
                 material={materials['.004']}
                 position={[1.628, 3.8, -0.139]}
                 scale={[1.6, 1.183, 1.183]}
-            />
+            >
+
+              {/* <meshLambertMaterial color={shiningBlue}/> */}
+
+              <EffectComposer>
+                <Bloom
+                mipmapBlur
+                luminanceThreshold={luminanceThreshold}
+                intensity={intensity}
+                radius={radius}
+                />
+              </EffectComposer>
+
+            </mesh>
+
+
+
             {/* Eye right */}
             <mesh
                 castShadow
@@ -140,7 +172,8 @@ export function Robot(props) {
                 material={materials['.004']}
                 position={[1.628, 3.8, -0.139]}
                 scale={[1.6, 1.183, 1.183]}
-            />
+            >
+              </mesh>
         </group>
 
 

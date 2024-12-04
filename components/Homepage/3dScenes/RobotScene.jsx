@@ -27,7 +27,8 @@ import { motion } from "framer-motion-3d";  //sep lib
 
 import { Robot } from '../3dModelsGLTF/Robot';
 
-function RobotControls () {
+function RobotControls ({bodyRotation, robotMouseTrack}) {
+    // console.log(bodyRotation.y)
     return (
 
         <motion.group>
@@ -40,7 +41,8 @@ function RobotControls () {
             <Robot
             scale={0.9}
             position={[0,-1.5,0]}
-            rotation={[0,-1.6,-0.05]} 
+            rotation={[0,bodyRotation.y,bodyRotation.z]} 
+            robotMouseTrack={robotMouseTrack}
             />
 
 
@@ -104,7 +106,7 @@ function RobotControls () {
 // }
 
 
-export default function RobotScene() {
+export default function RobotScene({bodyRotation, robotMouseTrack}) {
 
     return (
         <div className="h-full">
@@ -117,7 +119,7 @@ export default function RobotScene() {
             >
             <Float>
 
-            <RobotControls/>
+            <RobotControls bodyRotation={bodyRotation} robotMouseTrack={robotMouseTrack}/>
             {/* Environment lights, float like animation */}
             {/* <Environment preset="city" background blur={4}/> */}
                 {/* <Shape orbitControl={orbitControl} texture_1_url={texture_1_url} texture_2_url={texture_2_url}/> */}
@@ -132,8 +134,8 @@ export default function RobotScene() {
             {/* used for light debugging */}
             {/* <LightScene/> */}
 
-            <directionalLight intensity={2} position={[3.15, 0.1, 4.5]}/>
-
+            <directionalLight intensity={0} position={[-0, 2, 20.5]}/>
+            <ambientLight intensity={2} />
             {/* <spotLight
             intensity={23}
             position={[-2.3,1.85,3.7]}

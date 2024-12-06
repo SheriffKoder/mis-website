@@ -27,7 +27,7 @@ import { motion } from "framer-motion-3d";  //sep lib
 
 import { Robot } from '../3dModelsGLTF/Robot';
 
-function RobotControls ({bodyRotation, robotMouseTrack}) {
+function RobotControls ({bodyRotation, robotMouseTrack, sectionId, robotPositionScale}) {
     // console.log(bodyRotation.y)
     return (
 
@@ -39,12 +39,24 @@ function RobotControls ({bodyRotation, robotMouseTrack}) {
             myWallpaper={texture_1}
             /> */}
             <Robot
-            scale={0.9}
-            position={[0,-1.5,0]}
+            // scale={0.9}
+            // position={[0,-1.5,0]}
+            scale={robotPositionScale.scale}
+            position={[robotPositionScale.posX, robotPositionScale.posY, robotPositionScale.posZ]}
             rotation={[0,bodyRotation.y,bodyRotation.z]} 
             robotMouseTrack={robotMouseTrack}
+            sectionId={sectionId}
             />
 
+            {/* 
+            
+            section 2 rotation Y from -1.9 to -1.1
+            rotation Z stays -0.05
+
+            section 3 rotation y from -1.1 to -1.45
+            rotation Z set to -0.15 
+            
+            */}
 
         </motion.group>
 
@@ -106,10 +118,10 @@ function RobotControls ({bodyRotation, robotMouseTrack}) {
 // }
 
 
-export default function RobotScene({bodyRotation, robotMouseTrack}) {
+export default function RobotScene({bodyRotation, robotMouseTrack, sectionId, robotPositionScale}) {
 
     return (
-        <div className="h-full">
+        <div className="h-full overflow-visible">
             <Canvas
             camera={{
                 position: [0, 0, 15], fov:25,
@@ -117,9 +129,14 @@ export default function RobotScene({bodyRotation, robotMouseTrack}) {
                 // far: 200,
             }}
             >
-            <Float>
+            <Float speed={sectionId === 3 ? 0 : 1}>
 
-            <RobotControls bodyRotation={bodyRotation} robotMouseTrack={robotMouseTrack}/>
+            <RobotControls 
+            bodyRotation={bodyRotation} 
+            robotMouseTrack={robotMouseTrack}
+            sectionId={sectionId}
+            robotPositionScale={robotPositionScale}
+            />
             {/* Environment lights, float like animation */}
             {/* <Environment preset="city" background blur={4}/> */}
                 {/* <Shape orbitControl={orbitControl} texture_1_url={texture_1_url} texture_2_url={texture_2_url}/> */}

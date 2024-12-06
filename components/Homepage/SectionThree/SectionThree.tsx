@@ -168,7 +168,7 @@ const SectionThree = () => {
     
 
   return (
-    <div className=' w-full md:w-[70vw] ml-auto h-full flex items-center justify-center text-white
+    <div className=' w-full ml-auto h-full flex items-center justify-center text-white
     relative'
     id="section3">
 
@@ -199,7 +199,7 @@ const SectionThree = () => {
             </div>
 
 
-            <div className='flex flex-col'>
+            <div className='flex flex-col mt-[7rem]'>
                 <div className='absolute left-0 w-full text-center opacity-0' id="sectionThreeHeader">
                     
                     <h2 className='Heading2'>{allText.sectionThree.header}</h2>

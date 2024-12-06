@@ -85,6 +85,13 @@ export function Robot(props) {
         window.removeEventListener("blur", handleBlur);
         window.removeEventListener("focus", handleFocus);
       }
+
+
+      // 
+      if (props.sectionId === 3) {
+        setScaledX(-0.2);
+        setScaledY(0.1);
+      }
   
       // Cleanup the event listeners when the component unmounts
       return () => {

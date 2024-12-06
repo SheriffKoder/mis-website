@@ -37,7 +37,13 @@ enabling our clients to streamline their operations and reach new heights.`
   sectionThree: {
     header: `It's all about numbers`,
     paragraph: `Enabling our clients to streamline their operations and reach new heights`
-  }
+  },
+  sectionFour: {
+    header: `With you step by step`,
+    paragraph: `We specialize in saving people time through innovative automation and tailored services. 
+Our expertise spans web development, automation, video editing, and social media management, 
+enabling our clients to streamline their operations and reach new heights.`
+  },
 
 }
 
@@ -73,6 +79,31 @@ let sectionThree_cardsContent = [
     number: 10,
   }
 ]
+
+let sectionFour_cardsContent = [
+  {
+    name: "Step one",
+    content: "The first step which contains many steps. The third step which contains many steps. The third step which contains many steps. The third step which contains many steps",
+    number: 1
+  },
+  {
+    name: "Step two",
+    content: "The second step which contains many steps, The third step which contains many steps",
+    number: 2
+  },
+  {
+    name: "Step three",
+    content: "The third step which contains many steps. The third step which contains many steps, The third step which contains many steps",
+    number: 3
+  },
+  {
+    name: "Step four",
+    content: "The fourth step which contains many steps, The fourth step which contains many steps, The fourth step which contains many steps",
+    number: 4
+  }
+]
+
+
 
 let backgrounds = {
 
@@ -112,7 +143,8 @@ module.exports = {
     goals,
     sectionTwo_cardsContent,
     allText,
-    sectionThree_cardsContent
+    sectionThree_cardsContent,
+    sectionFour_cardsContent,
 
 }
 

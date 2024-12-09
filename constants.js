@@ -44,6 +44,10 @@ enabling our clients to streamline their operations and reach new heights.`
 Our expertise spans web development, automation, video editing, and social media management, 
 enabling our clients to streamline their operations and reach new heights.`
   },
+  sectionSix: {
+    header: `We would like to hear from you`,
+    paragraph: `Contact us using the method you prefer`
+  },
 
 }
 
@@ -59,7 +63,7 @@ let sectionTwo_cardsContent = [
   {
     name: "Automation",
     content: "We specialize in saving people time through innovative automation, our clients to streamline their operations and reach new heights",
-  }
+  },
 ]
 
 let sectionThree_cardsContent = [
@@ -104,6 +108,49 @@ let sectionFour_cardsContent = [
 ]
 
 
+const sectionFive_cardsContent = [
+  {
+    name: "John Smith 1",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 2",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 3",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 4",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 5",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 6",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 7",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+  {
+    name: "John Smith 8",
+    company: "Company Co.",
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+  },
+]
+
 
 let backgrounds = {
 
@@ -145,6 +192,7 @@ module.exports = {
     allText,
     sectionThree_cardsContent,
     sectionFour_cardsContent,
+    sectionFive_cardsContent,
 
 }
 

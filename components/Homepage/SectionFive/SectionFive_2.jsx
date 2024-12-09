@@ -4,27 +4,9 @@ import Image from 'next/image';
 import { sectionFive_cardsContent } from '@/constants';
 /*
 
-/* https://www.youtube.com/watch?v=mF9yOwlunWk&t=11s
-
-.brandSliderItem {
-    position: absolute;
-    left: 100%;
-    animation: autoRun 10s linear infinite;
-    animation-delay: calc((10s/10) * (var(--position) - 1) );
-  }
-  
-  @keyframes autoRun {
-    from {
-      left: calc(100px*-1);
-  
-    } to {
-      left: 100%;
-  
-    }
-  }
-  
-
-
+https://www.youtube.com/watch?v=j7GG009J9uc  
+https://www.lundevweb.com/2023/11/design-effect-magic-slider-using-html.html
+https://github.com/HoanghoDev/slider_1
 
 
 
@@ -34,7 +16,7 @@ import { sectionFive_cardsContent } from '@/constants';
 */
 
 
-const page = () => {
+const sectionFour_2 = () => {
 
   useEffect(()=> {
 
@@ -50,7 +32,7 @@ let timeDom = document.querySelector('.carousel .time');
 
 thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 let timeRunning = 1000;
-let timeAutoNext = 7000;
+let timeAutoNext = 1000;
 
 nextDom.onclick = function(){
     showSlider('next');    
@@ -90,14 +72,19 @@ function showSlider(type){
 },[])
 
   return (
-    <div className='h-[100vh] w-full flex items-center justify-center'>
+    <div className='h-[100vh] w-full flex items-center justify-center' id="section5">
       <div className='w-full h-[70vh]'>
         <div className="carousel">
         <div className="list">
 
             {sectionFive_cardsContent.map((card, index)=> (
               <div className="item">
-                <Image alt="" src={`/image/img1.jpg`} fill/>
+                {/* <div className=''> */}
+                    {/* <div className='absolute w-full h-full top-0 left-0 bg-black'/> */}
+                    {/* <div className='opacity-50'> */}
+                        <Image alt="" src={`/image/img1.jpg`} fill/>
+                    {/* </div> */}
+                {/* </div> */}
                 <div className="content">
                     <div className="author">{card.company}</div>
                     <div className="title">{card.name}</div>
@@ -138,10 +125,10 @@ function showSlider(type){
                 <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/>
                 <div className="content">
                     <div className="title">
-                        Name Slider
+                        {card.name}
                     </div>
                     <div className="description">
-                        Description
+                        {card.company}
                     </div>
                 </div>
             </div>
@@ -175,4 +162,4 @@ function showSlider(type){
   )
 }
 
-export default page
+export default sectionFour_2

@@ -24,7 +24,7 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "top 60%",
                 end: "10% 50%",
-                // markers: true,
+                // markers: false,
 
               },
             y: 0, //normal value
@@ -41,7 +41,7 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "top 60%",
                 end: "10% 50%",
-                // markers: true,
+                // markers: false,
 
               },
               y: 0, //normal value
@@ -60,7 +60,7 @@ const SectionFour = () => {
         //         scrub: true,
         //         start: "20% 60%",
         //         end: "50% 50%",
-        //         markers: true,
+        //         markers: false,
 
         //       },
         //       y: 0, //normal value
@@ -79,7 +79,7 @@ const SectionFour = () => {
                     // scrub: true,
                     start: "20% 60%",
                     // end: "50% 50%",
-                    markers: true,
+                    markers: false,
     
                   },
                   y: 0, //normal value
@@ -97,7 +97,7 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "20% 60%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
               },
               y: 0, //normal value
@@ -116,13 +116,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "40% 70%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
               },
               y: 0, //normal value
               opacity: 1,
               duration: tweenDuration,
-              delay: 2,
+              delay: 1.5,
               ease: "power2.out",
             //   stagger: 1
       
@@ -134,13 +134,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "40% 70%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
             },
             y: 0, //normal value
             opacity: 1,
             duration: tweenDuration,
-            delay: 2,
+            delay: 1.5,
             ease: "power2.out",
             //   stagger: 1
     
@@ -152,13 +152,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "60% 80%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
               },
               y: 0, //normal value
               opacity: 1,
               duration: tweenDuration,
-              delay: 3,
+              delay: 2,
               ease: "power2.out",
             //   stagger: 1
       
@@ -170,13 +170,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "60% 80%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
             },
             y: 0, //normal value
             opacity: 1,
             duration: tweenDuration,
-            delay: 3,
+            delay: 2,
             ease: "power2.out",
             //   stagger: 1
     
@@ -188,13 +188,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "80% 90%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
               },
               y: 0, //normal value
               opacity: 1,
               duration: tweenDuration,
-              delay: 4,
+              delay: 2.5,
               ease: "power2.out",
             //   stagger: 1
       
@@ -206,13 +206,13 @@ const SectionFour = () => {
                 // scrub: true,
                 start: "80% 90%",
                 // end: "50% 50%",
-                markers: true,
+                markers: false,
 
             },
             y: 0, //normal value
             opacity: 1,
             duration: tweenDuration,
-            delay: 4,
+            delay: 2.5,
             ease: "power2.out",
             //   stagger: 1
     
@@ -225,16 +225,16 @@ const SectionFour = () => {
 
   return (
     <div className=' flex flex-col items-center w-full h-full max-w-[1500px] mx-auto
-    pb-[2rem]'
+    p-[2rem] bg-[#0000008c] rounded-[20px]'
     id="section4">
-        <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem] mt-[25vh] md:mt-[2rem]'>
+        <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem]'>
             <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionFour_header">{allText.sectionFour.header}</h2>
             <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionFour_para">{allText.sectionFour.paragraph}</p>
         </div>
 
 
         {sectionFour_cardsContent.map((card, index)=> (
-            <div className={` ${(index % 2 === 0) ? 'mr-auto' : 'ml-auto'} 
+            <div className={` ${(index % 2 === 0) ? 'md2:mr-auto' : 'md2:ml-auto'} 
             sectionFour_card mt-[2rem] flex flex-col gap-4 justify-start items-center1`}
             id={`sectionFourCards_container${index+1}`} key={"section 4 card "+index}>
                 <div className='flex flex-row gap-8 items-center justify-center'>

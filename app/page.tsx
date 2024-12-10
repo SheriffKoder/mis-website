@@ -18,6 +18,8 @@ import SectionFive_2 from '@/components/Homepage/SectionFive/SectionFive_2'
 
 import SectionFivePhone from '@/components/Homepage/SectionFive/SectionFivePhone'
 import SectionSix from '@/components/Homepage/SectionSix/SectionSix'
+import SectionTwo_2 from '@/components/Homepage/SectionTwo/SectionTwo_2'
+import Page from './test3/page'
 
 const page = () => {
 
@@ -124,10 +126,10 @@ const page = () => {
     
     // 1,2,1
     // Map the progress to the new range 2.5 to 6 reverse
-    const scale = 2.5 + (progress * ( 0.3 - 2.5 ));
+    const scale = 2.5 + (progress * ( 0.4 - 2.5 ));
 
     // Map the progress to the new range 0 to -1.7 reverse
-    const posX = -2.7 + (progress * ( -0 - -2.7 ));
+    const posX = -2.7 + (progress * ( -2 - -2.7 ));
 
     // Map the progress to the new range -1.5 to -26 reverse
     const posY = -10.5 + (progress * ( -1.7 - -10.5 ));
@@ -372,7 +374,7 @@ const page = () => {
       scrollTrigger: {
         trigger: "#section5",
         start: "top 80%",
-        end: "0% 20%",
+        end: "0% 50%",
         scrub: 0.25,
         // markers: true,
         id: "scrub5",
@@ -385,6 +387,8 @@ const page = () => {
           // setRobotRotationZ(-0.05);
           // console.log(self.progress);
           setRobotPositionScale(mapProgressToScale_5(self.progress));
+          setRobotRotationY(mapProgressToRangeY(self.progress));
+
           gsap.to("#RobotSceneContainer", {
             opacity: 1,
             // minWidth: window.innerWidth,
@@ -443,11 +447,15 @@ const page = () => {
       // marginLeft: "450"
     }, "Section5")
 
+
+
+
+
     let TransitionTimeline_Robot_To_SectionSix = gsap.timeline({
       scrollTrigger: {
         trigger: "#section6",
-        start: "top 50%",
-        end: "50% 50%",
+        start: "top 100%",
+        end: "50% 60%",
         scrub: 0.25,
         // markers: true,
         id: "scrub6",
@@ -472,7 +480,7 @@ const page = () => {
 
     }, "Section6")
     .to("#RobotSceneContainer", {
-        left: window.innerWidth*0.2,
+        left: window.innerWidth*0.4,
     }, "Section6")
 
   },[]);
@@ -488,7 +496,7 @@ const page = () => {
           <VaporWave/>
       </div>
 
-      <div className='px-[2rem] lg:px-[4rem] max-w-[1500px] mx-auto relative 
+      <div className=' mx-auto relative 
       overflow-visible'>
         <Robot 
         bodyRotation={{x:0,y:robotRotationY, z:robotRotationZ}} 
@@ -497,36 +505,41 @@ const page = () => {
         robotPositionScale={robotPositionScale}
         />
 
-        <section className='w-full h-[100vh]'>
+        <section className='w-full h-[100vh] max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto'>
           <Hero/>
         </section>
 
-        <section className='w-full min-h-[100vh] overflow-clip'>
+        <section className='w-full min-h-[100vh] overflow-clip hidden md1:block max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto'>
           <SectionTwo/>
         </section>
 
-        <section className='w-full h-[100vh]'>
+        <section className='w-full min-h-[100vh] overflow-clip md1:hidden mx-auto'>
+          <SectionTwo_2/>
+          {/* <Page/> */}
+        </section>
+
+        <section className='w-full h-[100vh] max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto'>
           <SectionThree/>
         </section>
 
-        <section className='w-full min-h-[100vh]'>
+        <section className='w-full min-h-[100vh] max-w-[1500px] px-[0rem] lg:px-[4rem] mx-auto'>
           <SectionFour/>
         </section>
         
-        <section className='w-full min-h-[100vh]'>
+        <section className='w-full min-h-[100vh] max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto'>
           {/* <SectionFive/> */}
           {/* <SectionFivePhone/> */}
           <SectionFive_2/>
         </section>
 
-  
+        <section className='w-full h-[70vh] max-w-[1500px] mb-[5rem] px-[2rem] lg:px-[4rem] mx-auto'>
+          <SectionSix/>
+        </section>
 
 
       </div>
 
-      <section className='w-full h-[100vh] max-w-[2000px] mx-auto mb-[5rem]'>
-          <SectionSix/>
-        </section>
+
       
     </main>
 

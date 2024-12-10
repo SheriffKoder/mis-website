@@ -1,159 +1,115 @@
-
-"use client"
-import React from 'react'
-import {allText, sectionFour_cardsContent} from "@/constants";
-
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
 import { easeOut } from 'framer-motion';
-import ColoredButton from '@/components/ColoredButton'
-
+import { sectionSix_socials } from "@/constants";
+import Form from "./Form";
+import SparkleSVG from "@/public/SVG/sparkle";
 
 const SectionSix = () => {
 
 
-   
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  useGSAP(()=> {
 
-    useGSAP(()=> {
+      gsap.to("#sectionSix_header", {
+          scrollTrigger: {
+              trigger: "#section6",
+              // scrub: true,
+              start: "top 60%",
+              end: "10% 50%",
+              // markers: false,
 
-        gsap.to("#sectionSix_line", {
-            scrollTrigger: {
-                trigger: "#section6",
-                // scrub: true,
-                start: "top 60%",
-                end: "10% 50%",
-                // markers: false,
+          },
+          x: 0, //normal value
+          opacity: 1,
+          duration: 1,
+          delay: 0,
+          ease:  easeOut,
 
-              },
-            //   y: 0, //normal value
-              opacity: 1,
-              duration: 0.5,
-              delay: 0,
-              width: window.innerWidth*0.5,
-              ease: "none"
-      
-          });
+      });
 
-          gsap.to("#sectionSix_header", {
-            scrollTrigger: {
-                trigger: "#section6",
-                // scrub: true,
-                start: "top 60%",
-                end: "10% 50%",
-                // markers: false,
+      //   gsap.to("#sectionFive_para", {
+      //     scrollTrigger: {
+      //         trigger: "#section5",
+      //         // scrub: true,
+      //         start: "top 60%",
+      //         end: "10% 50%",
+      //         // markers: false,
 
-              },
-            y: 0, //normal value
-            opacity: 1,
-            duration: 0.75,
-            delay: 0.5,
-            ease:  "none",
-      
-          });
+      //       },
+      //       y: 0, //normal value
+      //       opacity: 1,
+      //       duration: 1,
+      //       delay: 0.5,
+      //       ease: easeOut
 
-          gsap.to("#sectionSix_para", {
-            scrollTrigger: {
-                trigger: "#section6",
-                // scrub: true,
-                start: "top 60%",
-                end: "10% 50%",
-                // markers: false,
+      //   });
 
-              },
-              y: 0, //normal value
-              opacity: 1,
-              duration: 0.75,
-              delay: 0.5,
-              ease: "none"
-      
-          });
+      let socialIcons = gsap.utils.toArray(".socialIcon");
 
-    },[]);
+      gsap.to(socialIcons, {
+        scrollTrigger: {
+            trigger: "#section6",
+            // scrub: true,
+            start: "center 60%",
+            end: "top top",
+            // markers: true,
+
+          },
+          scale: 1, //normal value
+          // x:0,
+          opacity: 1,
+          duration: 1,
+          delay: 0,
+          ease: easeOut,
+          stagger: -0.2, // delay between elements
+  
+      });
+
+
+
+ 
+
+
+  },[]);
+
+
+
 
   return (
-    <div className='mt-[5rem] h-full w-full flex flex-col p-[2rem]' id="section6">
+    <div className='h-full w-full flex items-center justify-center lg:flex-row flex-col
+    gap-2' id="section6">
 
-        <div className='w-full flex flex-col gap-0 items-center max-w-[1000px] mx-auto mb-[2rem] mt-[25vh] md:mt-[2rem]'>
-            <h2 className='Heading2 translate-y-[-20px] opacity-0 text-center' id="sectionSix_header">{allText.sectionSix.header}</h2>
-            <span className='w-0 opacity-0 h-[1px] bg-gray-700 mb-4 mt-1' id="sectionSix_line"></span>
-            <p className='Paragraph1 pl-[0.5rem] translate-y-[20px] opacity-0' id="sectionSix_para">{allText.sectionSix.paragraph}</p>
-        </div>
-
-
-        <div className='w-full flex-1 flex lg:flex-row flex-col'>
-
-            <div className='lg:w-[50%] h-full border w-full'>
-                Contact form
-            </div>
-
-            <div className='lg:w-[50%] h-full w-full'>
-                <div className='lg:h-[50%] h-0 mt-auto'></div>
-                <div className='lg:h-[50%] mt-auto border h-full'>
-                    Social media links
-                </div>
-
-            </div>
-
-        </div>
-
-
-      {/* <div className='border rounded-[2rem] h-full w-[50%] bg-[#0f0f0f]
-      border-[#3b3b3b] flex items-start justify-center p-[2rem]
-      flex-col'>
-
-        <h2 className=' Heading2'>Get in touch</h2>
-
-        <p className='Paragraph1 gradient_text'>
-            Define your goals and identify areas where AI can add value to your business
-        </p>
-
-        <form className='w-full mt-[2rem]'>
-            <ul className='flex flex-col gap-[2rem]'>
-                <li className='flex flex-col w-[70%]'>
-                    <input type="text" className="
-                    pr-4 py-1 border-b border-[#818181] bg-[#0f0f0f]
-                    " id="input1"
-                    placeholder='Full name'></input>
-                </li>
-
-                <li className='flex flex-col w-[70%]'>
-                    <input type="text" className="
-                    pr-4 py-1 border-b border-[#818181] bg-[#0f0f0f]
-                    " id="input1"
-                    placeholder='Email'></input>
-                </li>
-
-                <li className='flex flex-col w-[70%]'>
-                    <input type="text" className="
-                    pr-4 py-1 border-b border-[#818181] bg-[#0f0f0f]
-                    " id="input1"
-                    placeholder='Subject'></input>
-                </li>
-
-                <li className='flex flex-col w-[70%] mt-[2rem]'>
-                    <label htmlFor="contact_textArea" className='mb-2 opacity-60'>Message</label>
-                    <textarea className='pr-4 py-1 border-b border-[#818181] bg-[#0f0f0f]'
-                    id="contact_textArea">
-
-                    </textarea>
-                </li>
-                
-                <li className='w-[70%]'>
-                    <ColoredButton text={"send"}/>
-                </li>
-
-            </ul>
-        </form>
-
-
+      <div className='order-2 lg:order-1 w-full h-full bg-[#0a0a0a] border border-[#252525] rounded-[10px]'>
+        <h3 className="Heading3 text-center my-[2rem]">Tell us your inquiry</h3>
+        <Form/>
       </div>
 
-        <div className='flex w-[50%] h-[300px] border mt-auto'>
+    <div className='flex flex-col w-full order-1 h-[10%] lg:order-2 lg:h-full items-center'>
+        <div className='text-end h-[20%] lg:h-auto lg:mb-[1rem]'>
+                <h2 className='Heading1 translate-x-[10rem] opacity-0'
+                id="sectionSix_header">Contact us</h2>
+        </div>
+        <div className='lg:h-full w-full hidden lg:flex items-start justify-center gap-[4rem] mt-4'>
+            {
+              sectionSix_socials.map((social, index)=> (
+                <div className="socialIcon w-[3rem] h-[3rem] rounded-full border-4 items-center justify-center flex
+                scale-0 opacity-0" key={'social'+index}><SparkleSVG fill={"#ffffff"}/></div>
+              ))
+            }
+        </div>
+    </div>
 
-        </div> */}
+    <div className='h-[20%] w-full visible lg:hidden order-3'>
+      {
+        sectionSix_socials.map((social, index)=> (
+          <div className="socialIcon w-[2rem] h-[2rem] rounded-full
+          scale-0 opacity-0" key={'social_sm'+index}><SparkleSVG fill={"#ffffff"}/></div>
+        ))
+      }
+    </div>
 
 
     </div>

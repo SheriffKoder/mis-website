@@ -170,6 +170,46 @@ which will wrap the children in the layout */
   }
 }
 
+.CardStyle {
+@apply border
+p-4 rounded-[10px]
+flex justify-start flex-col pb-8 transition-all duration-75 ease-linear
+
+}
+
+.CardStyle h3 {
+  @apply text-[2rem]
+}
+
+.CardStyle p {
+  @apply  text-[1rem]
+}
+
+.CardStyle_bg_1 {
+@apply hover:bg-[rgba(23,201,255,0.15)] bg-[rgba(23,201,255,0.08)] border-[rgba(23,216,255,0.17)]
+}
+
+.CardStyle_bg_1 p {
+  @apply text-[rgb(178,225,235)]
+}
+
+
+
+
+
+
+.CardStyle_bg_2 {
+  @apply hover:bg-[rgba(144,70,217,0.12)] bg-[rgba(144,70,217,0.08)] border-[rgba(144,70,217,0.2)]
+  }
+
+  .CardStyle_bg_1 p {
+    @apply text-[rgb(159,170,172)]
+  }
+
+  .CardStyle_bg_2 p {
+    @apply text-[rgb(182,164,199)]
+  }
+  
 /* dark sides on brand slider, used in the wrapper in the hero component */
 #brandStrip::after {
   /* border: 1px solid rgb(255, 0, 0); */
@@ -197,16 +237,44 @@ which will wrap the children in the layout */
 }
 
 .valueCard1 {
-/* background: radial-gradient(circle at 100% 100%, #0a0a0a 0, #0a0a0a 4px, transparent 4px) 0% 0%/6px 6px no-repeat,
+background: radial-gradient(circle at 100% 100%, #0a0a0a 0, #0a0a0a 4px, transparent 4px) 0% 0%/6px 6px no-repeat,
             radial-gradient(circle at 0 100%, #0a0a0a 0, #0a0a0a 4px, transparent 4px) 100% 0%/6px 6px no-repeat,
             radial-gradient(circle at 100% 0, #0a0a0a 0, #0a0a0a 4px, transparent 4px) 0% 100%/6px 6px no-repeat,
             radial-gradient(circle at 0 0, #0a0a0a 0, #0a0a0a 4px, transparent 4px) 100% 100%/6px 6px no-repeat,
             linear-gradient(#0a0a0a, #0a0a0a) 50% 50%/calc(100% - 4px) calc(100% - 12px) no-repeat,
             linear-gradient(#0a0a0a, #0a0a0a) 50% 50%/calc(100% - 12px) calc(100% - 4px) no-repeat,
-            linear-gradient(136deg, #9046d900 0%, #17d8ff2a 100%);
+            linear-gradient(136deg, #9046d913 0%, #17d8ff3a 100%);
 border-radius: 6px;
 padding: 18px;
-box-sizing: border-box; */
+box-sizing: border-box;
+}
+
+.valueCard1:hover {
+  background: 
+              linear-gradient(136deg, #9046d92a 0%, #17d8ff6c 100%);
+  border-radius: 6px;
+  padding: 18px;
+  box-sizing: border-box;
+
+  
+  }
+
+.glass_bg1 {
+  /* background: rgba(255, 255, 255, 0.01); */
+/* border-radius: 16px; */
+/* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+/* backdrop-filter: blur(5px); */
+/* -webkit-backdrop-filter: blur(5px); */
+/* border: 1px solid rgba(255, 255, 255, 0.07); */
+}
+
+.glass_bg2 {
+  background: rgba(0, 0, 0, 0.664);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .valueCard2::before {
@@ -327,7 +395,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 
 .Paragraph1 {
   @apply font-extralight text-[3vw] leading-[3vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(16px,2vw)] md:leading-[min(22px,2vw)] text_shadow_2
-  Poppins color3
+  Poppins color2
 }
 
 .Paragraph2 {
@@ -343,6 +411,34 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   #9046D9
   
   0%, 
+  
+  #17D9FF
+
+
+  100%
+  );  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.GradientButton:hover {
+  box-sizing:content-box;
+  border: 3px solid #9046D9;
+}
+
+button {
+  border: 3px solid transparent;
+
+}
+
+.GradientButton:hover .gradient_text {
+  background: -webkit-linear-gradient(
+    
+  0deg, 
+  
+  #9046D9
+  
+  60%, 
   
   #17D9FF
 
@@ -374,7 +470,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 }
 
 .color2 {
-  @apply text-[#B5B5B5];
+  @apply text-[#9e9e9e];
 }
 
 
@@ -572,7 +668,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 }
 .carousel .list .item .content{
   position: absolute;
-  top: 20%;
+  top: 10%;
   width: 1140px;
   max-width: 80%;
   left: 50%;
@@ -584,7 +680,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 }
 .carousel .list .item .author{
   font-weight: bold;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
@@ -593,7 +689,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   line-height: 1.3em;
 }
 .carousel .list .item .topic{
-  color: #f1683a;
+  color: #17D9FF;
 }
 .carousel .list .item .buttons{
   display: grid;
@@ -604,9 +700,9 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 }
 .carousel .list .item .buttons button{
   border: none;
-  background-color: #eee;
+  background-color: #17D9FF;
   letter-spacing: 3px;
-  font-family: Poppins;
+  /* font-family: Poppins; */
   font-weight: 500;
 }
 .carousel .list .item .buttons button:nth-child(2){
@@ -637,7 +733,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   border-radius: 20px;
 }
 .thumbnail .item .content{
-  color: #fff;
+  color: #fff;  /*thumbs content text color*/
   position: absolute;
   bottom: 10px;
   left: 10px;
@@ -652,29 +748,32 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 /* arrows */
 .arrows{
   position: absolute;
-  top: 80%;
-  right: 52%;
+  bottom: 2rem;
+  left: 2rem;
+  /* width: 100%; */
   z-index: 100;
-  width: 300px;
-  max-width: 30%;
+  /* width: 300px; */
+  /* max-width: 30%; */
   display: flex;
   gap: 10px;
   align-items: center;
+  /* border: 1px solid white; */
 }
 .arrows button{
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background-color: #eee4;
+  background-color: #17D9FF;
   border: none;
-  color: #fff;
-  font-family: monospace;
-  font-weight: bold;
-  transition: .5s;
+  color: #000000;
+  /* font-family: monospace; */
+  /* font-weight: bold; */
+  transition: .1s;
+  font-size: 12px;
 }
 .arrows button:hover{
-  background-color: #fff;
-  color: #000;
+  background-color: #eee4;
+  color: #dbdbdb;
 }
 
 /* animation */
@@ -693,7 +792,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
-  animation: showContent .5s 1s linear 1 forwards;
+  animation: showContent .25s 1s linear 1 forwards;
 }
 @keyframes showContent{
   to{
@@ -764,14 +863,14 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   z-index: 1000;
   width: 0%;
   height: 3px;
-  background-color: #f1683a;
+  background-color: #17D9FF;
   left: 0;
   top: 0;
 }
 
 .carousel.next .time,
 .carousel.prev .time{
-  animation: runningTime 1s linear 1 forwards;
+  animation: runningTime 0.55s linear 1 forwards;
 }
 @keyframes runningTime{
   from{ width: 100%}
@@ -833,4 +932,35 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
   .carousel .list .item .content .title{
       font-size: 30px;
   }
+}
+
+
+
+
+
+/* //////////////////////////////////////////////////////////// */
+
+/* .panel {
+  height: 100vh;
+  top: 0;
+  will-change: transform;
+} */
+
+.FormLabel {
+  @apply w-full text-start text-white text-xl
+}
+
+/* outline-none focus:outline-2 focus:outline-offset-3 */
+
+.FormInput {
+  @apply
+  focus:outline-[#387ca4]
+  caret-[#387ca4]
+  placeholder-[#6464645b]
+  text-[#ffffff]
+  border border-l-0 border-r-0 border-t-0
+  border-b-[#505050]
+
+  bg-[rgba(255,255,255,0.02)]
+  px-2
 }

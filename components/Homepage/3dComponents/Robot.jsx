@@ -5,7 +5,7 @@ const Robot = ({bodyRotation, robotMouseTrack, sectionId, robotPositionScale}) =
   return (
 
     // full screen
-    <div className='fixed w-full h-[92vh] top-[6%] left-0
+    <div className='fixed w-full h-[92vh] top-[6%] left-0 max-w-[1500px]
     flex z-[-1]' id="RobotWrapper">
 
       {/* positioned like the section containers */}

@@ -39,7 +39,7 @@ export default function RootLayout({
           </div>
 
 
-          <footer></footer>
+          {/* <footer className="w-full h-[300px] bg-slate-800 z-[-1]"></footer> */}
 
 
         </ThemeProvider>

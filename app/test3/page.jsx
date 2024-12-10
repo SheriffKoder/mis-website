@@ -1,178 +1,130 @@
 "use client"
-import React, { useEffect } from 'react'
-import Image from 'next/image';
-import { sectionFive_cardsContent } from '@/constants';
-/*
+import { useGSAP } from "@gsap/react";
+import gsap from 'gsap'
+import React from 'react'
+import {ScrollTrigger} from "gsap/all";
+import {allText} from "@/constants";
+import {sectionTwo_cardsContent} from "@/constants";
+import { easeOut } from 'framer-motion';
 
-/* https://www.youtube.com/watch?v=mF9yOwlunWk&t=11s
+const Page = () => {
 
-.brandSliderItem {
-    position: absolute;
-    left: 100%;
-    animation: autoRun 10s linear infinite;
-    animation-delay: calc((10s/10) * (var(--position) - 1) );
-  }
-  
-  @keyframes autoRun {
-    from {
-      left: calc(100px*-1);
-  
-    } to {
-      left: 100%;
-  
-    }
-  }
-  
+    gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-
-
-
-*/
-
-
-const page = () => {
-
-  useEffect(()=> {
-
-//step 1: get DOM
-let nextDom = document.getElementById('next');
-let prevDom = document.getElementById('prev');
-
-let carouselDom = document.querySelector('.carousel');
-let SliderDom = carouselDom.querySelector('.carousel .list');
-let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-let timeDom = document.querySelector('.carousel .time');
-
-thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-let timeRunning = 1000;
-let timeAutoNext = 7000;
-
-nextDom.onclick = function(){
-    showSlider('next');    
-}
-
-prevDom.onclick = function(){
-    showSlider('prev');    
-}
-let runTimeOut;
-let runNextAuto = setTimeout(() => {
-    next.click();
-}, timeAutoNext)
-function showSlider(type){
-    let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
-    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+    useGSAP(()=> {
     
-    if(type === 'next'){
-        SliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add('next');
-    }else{
-        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add('prev');
-    }
-    clearTimeout(runTimeOut);
-    runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove('next');
-        carouselDom.classList.remove('prev');
-    }, timeRunning);
+      gsap.to("#sectionTwo_header", {
+        scrollTrigger: {
+            trigger: ".container2",
+            // scrub: true,
+            start: "center 60%",
+            end: "top top",
+            // markers: true,
 
-    clearTimeout(runNextAuto);
-    runNextAuto = setTimeout(() => {
-        next.click();
-    }, timeAutoNext)
-}
-},[])
+          },
+        y: 0, //normal value
+        opacity: 1,
+        duration: 1,
+        delay: 0,
+        ease:  easeOut,
+  
+      });
+
+      gsap.to("#sectionTwo_para", {
+        scrollTrigger: {
+            trigger: ".container2",
+            // scrub: true,
+            start: "center 60%",
+            end: "top top",
+            markers: true,
+
+          },
+          y: 0, //normal value
+          opacity: 1,
+          duration: 1,
+          delay: 0.5,
+          ease: easeOut
+  
+      });
+
+
+        gsap.utils.toArray(".section111").forEach((section, i) => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: "top top",    //top of element, top vh
+                pin: true,
+                // markers: true,
+                pinSpacing: false,
+                snap: 1,    // auto show
+                // scrub: 0.5, // number of seconds for delay
+                
+            })
+        })
+
+ 
+
+    },[]);
+
+
+
+
+
 
   return (
-    <div className='h-[100vh] w-full flex items-center justify-center'>
-      <div className='w-full h-[70vh]'>
-        <div className="carousel">
-        <div className="list">
 
-            {sectionFive_cardsContent.map((card, index)=> (
-              <div className="item">
-                <Image alt="" src={`/image/img1.jpg`} fill/>
-                <div className="content">
-                    <div className="author">{card.company}</div>
-                    <div className="title">{card.name}</div>
-                    <div className="des">
-                       {card.comment}
-                    </div>
-                    {/* <div className="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
-                    </div> */}
-                </div>
+
+        <div className="text-xl container1 border" id="section22">
+
+            <div className='sticky top-[2rem] w-[100%]'>
+              <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem] md:mt-[2rem]'>
+                <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionTwo_header">{allText.sectionTwo.header}</h2>
+                <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionTwo_para">{allText.sectionTwo.paragraph}</p>
+              </div>
             </div>
-            ))}
-            
 
-            {/* <div className="item">
-                <Image alt="" src="/image/img2.jpg" width={200} height={400}/>
-                <div className="content">
-                    <div className="author">LUNDEV</div>
-                    <div className="title">DESIGN SLIDER</div>
-                    <div className="topic">ANIMAL</div>
-                    <div className="des">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?
-                    </div>
-                    <div className="buttons">
-                        <button>SEE MORE</button>
-                        <button>SUBSCRIBE</button>
-                    </div>
-                </div>
-            </div> */}
+            <div className='section111 w-[100%] h-[100vh]'>
 
-        </div>
-        <div className="thumbnail">
-
-
-        {sectionFive_cardsContent.map((card, index)=> (
-                <div className="item">
-                <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/>
-                <div className="content">
-                    <div className="title">
-                        Name Slider
-                    </div>
-                    <div className="description">
-                        Description
-                    </div>
-                </div>
             </div>
-            ))}
 
-{/* 
-                <div className="item">
-                <Image src="/image/img1.jpg" alt="" width={200} height={400}/>
-                <div className="content">
-                        <div className="title">
-                            Name Slider
+            {
+                sectionTwo_cardsContent.map((cardContent, index)=> (
+                    <div className='section111 w-[100%] h-[100vh]  
+                    
+                    ' key={index}>
+                        
+
+                        <div
+                        className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'}
+                        CardStyle h-[100%] w-full rounded-lg
+                        `}
+                        >
+                            <div className=" rounded-lg
+                            flex flex-col p-[0px] md:p-[2rem] gap-[1.5rem] text-white  valueCard2
+                            ">
+
+                                <div className="">
+                                    <h3 className="">{cardContent.name}</h3>
+                                </div>
+                                <p className="">
+                                    {cardContent.content}
+                                </p>
+                                {/* <div className="box-1 w-[100px] h-[100px] bg-black">
+
+                                </div> */}
+                            </div>
                         </div>
-                        <div className="description">
-                            Description
-                        </div>
+                        {/* border border-[rgba(255,255,255,0.06)] */}
+
+                        
+
+                        
                     </div>
-                </div> */}
-
-          </div>
-
-        <div className="arrows">
-            <button id="prev">prev</button>
-            <button id="next">next</button>
+                ))
+                }
         </div>
-        <div className="time"></div>
-        </div>
-      </div>
-    </div>
 
 
   )
 }
 
-export default page
+export default Page

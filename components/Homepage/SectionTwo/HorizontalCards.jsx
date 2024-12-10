@@ -26,9 +26,11 @@ const HorizontalCards = () => {
             // slide in automatically when middle of the section
             // snap: 1/ (sections2.length -1),
             // the end function gets recalled each time the viewport resizes
+            // markers: true,
             end: ()=> "+="+document.querySelector(".container2").offsetWidth,
             // markers: true,
-            start: "center center"
+            start: "60% center",
+            end: "bottom top"
         }
     })
 
@@ -87,15 +89,19 @@ const HorizontalCards = () => {
                     ' key={index}>
                         
 
-                        <div className="valueCard1 h-[90%] w-[97%] rounded-lg">
+                        <div
+                        className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'}
+                        CardStyle h-[90%] w-[97%] rounded-lg
+                        `}
+                        >
                             <div className=" rounded-lg
                             flex flex-col p-[0px] md:p-[2rem] gap-[1.5rem] text-white  valueCard2
                             ">
 
-                                <div className=" rounded-lg py-2 px-6 w-fit">
-                                    <h3 className="gradient_text Heading3 border-b pb-[1rem] border-[#289eff]">{cardContent.name}</h3>
+                                <div className="">
+                                    <h3 className="">{cardContent.name}</h3>
                                 </div>
-                                <p className="w-full max-w-[400px] text-sm Paragraph2 ml-7">
+                                <p className="">
                                     {cardContent.content}
                                 </p>
                                 {/* <div className="box-1 w-[100px] h-[100px] bg-black">

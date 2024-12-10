@@ -225,8 +225,8 @@ const SectionFour = () => {
 
   return (
     <div className=' flex flex-col items-center w-full h-full max-w-[1500px] mx-auto
-    p-[2rem] bg-[#0000008c] rounded-[20px]'
-    id="section4">
+    px-[2rem] py-[4rem] bg-[#000000b4] rounded-b-none rounded-[20px] lg:rounded-[10px] lg:rounded-b-[10px] glass_bg2'
+    id="section4" style={{background: 'background: rgba(0, 0, 0, 0.2)'}}>
         <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem]'>
             <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionFour_header">{allText.sectionFour.header}</h2>
             <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionFour_para">{allText.sectionFour.paragraph}</p>

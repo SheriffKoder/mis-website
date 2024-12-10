@@ -152,6 +152,22 @@ const sectionFive_cardsContent = [
 ]
 
 
+const sectionSix_socials = [
+  {
+    name: "facebook",
+  },
+  {
+    name: "facebook",
+  },
+  {
+    name: "facebook",
+  },
+  {
+    name: "facebook",
+  },
+]
+
+
 let backgrounds = {
 
 }
@@ -193,7 +209,7 @@ module.exports = {
     sectionThree_cardsContent,
     sectionFour_cardsContent,
     sectionFive_cardsContent,
-
+    sectionSix_socials,
 }
 
 // export {};

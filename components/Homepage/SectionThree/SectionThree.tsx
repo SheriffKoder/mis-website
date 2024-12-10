@@ -178,27 +178,27 @@ const SectionThree = () => {
             <div className='absolute min-w-[200vw] top-[-5rem] h-[200vw] flex items-center justify-center
             md:min-h-[70vw] md:min-w-[70vw] md:h-[70vw] md:w-[70vh]'>
             
-            <div className='absolute w-[60%] h-[60%] rounded-full opacity-0
-            border-[10px] border_neon2 rotate360' id="circle2">
-                <div className=' w-full h-full border-dashed border-[10px] rounded-full opacity-[0.05]'>
+                <div className='absolute w-[60%] h-[60%] rounded-full opacity-0
+                border-[10px] border_neon2 rotate360' id="circle2">
+                    <div className=' w-full h-full border-dashed border-[10px] rounded-full opacity-[0.05]'>
+                    </div> 
                 </div> 
-            </div> 
 
-            <div className='absolute w-[76%] h-[76%] rounded-full
-            rotate360 border-2 opacity-0' id="circle3">
-            </div> 
+                <div className='absolute w-[76%] h-[76%] rounded-full
+                rotate360 border-2 opacity-0' id="circle3">
+                </div> 
 
-            <div className='absolute w-[55%] h-[55%] rounded-full opacity-0
-            rotate360' id="dot1">
-                <div className='h-4 w-4 rounded-full bg-[#242424]'></div>
-            </div>
-
-            <div className='rotate-180 absolute w-[55%] h-[55%] opacity-0' id="dot2">
-                <div className='rounded-full opacity-1 w-full h-full
-                rotate360'>
+                <div className='absolute w-[55%] h-[55%] rounded-full opacity-0
+                rotate360' id="dot1">
                     <div className='h-4 w-4 rounded-full bg-[#242424]'></div>
                 </div>
-            </div>
+
+                <div className='rotate-180 absolute w-[55%] h-[55%] opacity-0' id="dot2">
+                    <div className='rounded-full opacity-1 w-full h-full
+                    rotate360'>
+                        <div className='h-4 w-4 rounded-full bg-[#242424]'></div>
+                    </div>
+                </div>
             </div>
 
 

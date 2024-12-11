@@ -70,16 +70,16 @@ const Page = () => {
 
   return (
     <div className="z-[99]">
-        <div className='main-tool-bar fixed w-full top-0 h-[120px] md:h-[55px] bg-[#000000]
-        text-xs'>
+        <div className='main-tool-bar fixed w-full top-0 h-[120px] md:h-[65px] bg-[#000000]
+        ButtonText'>
 
 
             <nav className='md:pt-0 pt-[2rem] w-full h-full flex flex-row justify-center items-center'>
                 <ul className='max-w[400px] flex flex-row justify-evenly gap-[max(4vw,2rem)]
-                text-xs'>
+                '>
                     {
                     nav_links.map((link, index)=> (
-                        <li key={index}>
+                        <li key={"nav_link "+index}>
                             <Link href={link.href}  aria-label={link.aria}
                             className=" ActiveNavLink relative color2">{link.text}</Link>
                         </li>
@@ -96,7 +96,8 @@ const Page = () => {
                 </div >
 
             <div className="absolute left-[1rem] top-[1rem]">
-                    <button id="logo" className='w-[calc(2rem*1.5)] h-[calc(0.75rem*1.5)] relative'>
+                    <button id="logo" className='w-[calc(2rem*1.5)] h-[calc(0.75rem*1.5)] 
+                    lg:w-[calc(2rem*2)] lg:h-[calc(0.75rem*2)] relative'>
                         <Image src="/Logo/Logo_white.png" alt="company logo" fill ></Image>
                     </button>
             </div>

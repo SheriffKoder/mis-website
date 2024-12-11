@@ -37,7 +37,7 @@ const SectionThree = () => {
         //         borderWidth: window.innerWidth/5,
         
         //     });
-        let ambientCircle = gsap.to("#circle2", {
+        const ambientCircle = gsap.to("#circle2", {
             scrollTrigger: {
                 trigger: "#section3",
                 start: "top 20%",
@@ -50,7 +50,7 @@ const SectionThree = () => {
                 },
             opacity: 0.5,
             duration: 2,
-            delay: 0,
+            delay: 1,
             ease: easeOut,
             // rotate: 180,
             width: "60%",
@@ -71,7 +71,7 @@ const SectionThree = () => {
                 },
             opacity: 0.1,
             duration: 2,
-            delay: 0,
+            delay: 1,
             ease: easeOut,
         })
 
@@ -88,7 +88,7 @@ const SectionThree = () => {
                 },
             opacity: 1,
             duration: 2,
-            delay: 0,
+            delay: 1,
             ease: easeOut,
 
         })
@@ -106,14 +106,14 @@ const SectionThree = () => {
                 },
             opacity: 1,
             duration: 2,
-            delay: 0,
+            delay: 1,
             ease: easeOut,
  
         })
 
         ambientCircle.yoyo(true);
 
-        let tl3 = gsap.timeline({
+        const tl3 = gsap.timeline({
             scrollTrigger: {
                 trigger: "#section3",
                 start: "top 20%",
@@ -132,34 +132,35 @@ const SectionThree = () => {
             duration: 1,
             ease: easeOut,
             rotate: 180,
+            delay: 1,
             width: window.innerWidth*1.7,
             height: window.innerWidth*1.7,
             borderWidth: window.innerWidth/10,
-            onComplete: (e)=> {if (circle1Ref.current) circle1Ref.current.style.display="none"}
+            onComplete: ()=> {if (circle1Ref.current) circle1Ref.current.style.display="none"}
         }, "Section3_1")
 
 
         .to("#sectionThreeHeader", {
             opacity: 1,
             duration: 1,
-            delay: 0.25,
+            delay: 1.25,
         }, "Section3_1")
 
         /////////////////////////
         tl3.add("Section3_2")
         .to("#sectionThreeHeader", {
-            translateY: -120,
+            translateY: -150,
             duration: 2.5,
             ease: "elastic.out(1,0.3)",
             // ease: easeOut
-            // delay: 0.25,
+            delay: 1,
         }, "Section3_2")
         .to("#sectionThreeCardsContainer", {
             translateY: 0,
             opacity: 1,
             duration: 0.5,
             ease: easeOut,
-            // delay: 0.25,
+            delay: 1,
         }, "Section3_2")
     
     
@@ -173,11 +174,13 @@ const SectionThree = () => {
     id="section3">
 
 
-            {/* <div className='absolute w-[0px] h-[0px] rounded-full
-            border-[0px] border_neon1 border-dashed' id="circle1" ref={circle1Ref}></div> */}
+
             <div className='absolute min-w-[200vw] top-[-5rem] h-[200vw] flex items-center justify-center
             md:min-h-[70vw] md:min-w-[70vw] md:h-[70vw] md:w-[70vh]'>
             
+                <div className='absolute w-[0px] h-[0px] rounded-full
+                border-[0px] border_neon1 border-dashed' id="circle1" ref={circle1Ref}></div>
+                
                 <div className='absolute w-[60%] h-[60%] rounded-full opacity-0
                 border-[10px] border_neon2 rotate360' id="circle2">
                     <div className=' w-full h-full border-dashed border-[10px] rounded-full opacity-[0.05]'>
@@ -205,17 +208,18 @@ const SectionThree = () => {
             <div className='flex flex-col mt-[7rem]'>
                 <div className='absolute left-0 w-full text-center opacity-0' id="sectionThreeHeader">
                     
-                    <h2 className='Heading2'>{allText.sectionThree.header}</h2>
-                    <p className='Paragraph1'>{allText.sectionThree.paragraph}</p>
+                    <h2 className='text-[1.5rem] md2:text-[min(65px,8vw)]'>{allText.sectionThree.header}</h2>
+                    <p className='text-[0.7rem] opacity-60 md2:text-[min(20px,1.5vw)]'>{allText.sectionThree.paragraph}</p>
                 </div>
 
                 <div className='flex flex-col md:flex-row gap-4 md2:gap-[2rem] opacity-0 translate-y-[4rem]' id="sectionThreeCardsContainer">
                     
-                {sectionThree_cardsContent.map((card)=> (
-                    <div className='section3_card w-[150px] md2:w-[200px] md2:h-[200px] flex flex-col gap-0 md2:gap-2 items-center justify-center'>
-                        <h3 className='Heading3'>{card.name}</h3>
-                        <p className='Paragraph1'>{card.content}</p>
-                        <span className='Heading2'><AnimatedNumbers value={card.number}/>+</span>
+                {sectionThree_cardsContent.map((card,index)=> (
+                    <div className='section3_card w-[150px] md2:w-[200px] md2:h-[200px] flex flex-col gap-0 md2:gap-2 items-center justify-center'
+                    key={"sectionThree_cardsContent"+index}>
+                        <h3 className='text-[1.5rem] md2:text-[min(40px,8vw)]'>{card.name}</h3>
+                        <p className='text-[0.7rem] md2:text-[min(20px,1.5vw)] opacity-60'>{card.content}</p>
+                        <span className='text-[1.75rem] md2:text-[min(40px,8vw)]'><AnimatedNumbers value={card.number}/>+</span>
                     </div>
                 ))}
                     

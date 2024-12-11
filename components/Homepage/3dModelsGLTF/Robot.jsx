@@ -9,7 +9,6 @@ Title: robot Eva
 import React, { useState, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-import * as THREE from "three"
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 export function Robot(props) {
@@ -23,10 +22,9 @@ export function Robot(props) {
     const [previousScaledY, setPreviousScaledY] = useState(0);
   
   // Neon
-    const [luminanceThreshold, setLuminanceThreshold] = useState(0);
-    const [intensity, setIntensity] = useState(0.2);
-    const [radius, setRadius] = useState(0.35);
-    const shiningBlue = new THREE.Color(0.3, 1, 13);
+    const luminanceThreshold = 0;
+    const intensity = 0.2;
+    const radius = 0.35
 
     useEffect(() => {
       // Mousemove handler
@@ -99,7 +97,7 @@ export function Robot(props) {
         window.removeEventListener("blur", handleBlur);
         window.removeEventListener("focus", handleFocus);
       };
-    }, [previousScaledX, previousScaledY, props.robotMouseTrack]); // Dependencies include both X and Y to compare them
+    }, [previousScaledX, previousScaledY, props.robotMouseTrack, props.sectionId]); // Dependencies include both X and Y to compare them
   
 
   // Section 1

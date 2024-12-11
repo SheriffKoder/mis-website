@@ -1,10 +1,10 @@
 import React from 'react'
 
-const SparkleSVG = ({height="22px", width="20px", fill="#ffffff"}) => {
+const SparkleSVG = ({height="18px", width="14px", fill="#ffffff"}) => {
 
     const fillcolor = fill;
   return (
-    <svg height={height} width={width}
+    <svg height={"min(2vw,20px)"} width={"min(2vw,20px)"}
     viewBox="0 0 512 512" className={`fill-[${fillcolor}]`}
     style={{fill: fill}}>
       <g>

@@ -2,8 +2,12 @@ import React from 'react'
 
 const ColoredButton = ({text, hero}:{text:string, hero:boolean}) => {
   return (
-    <button className='w-full px-4 py-2 flex items-center justify-center rounded-full
-      neon_button gap-2 hover:gap-3 transition-all duration-100 ease-out'>
+    <button className={`
+      ButtonText w-[125px] h-[2rem] md:h-[1.5rem] md:w-[150px] lg:h-[2rem]
+      flex items-center justify-center rounded-full
+      neon_button transition-all duration-100 ease-out
+      ${hero && ('gap-2 hover:gap-3')}
+      `}>
 
         <span>
 

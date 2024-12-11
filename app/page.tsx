@@ -10,16 +10,12 @@ import SectionTwo from '@/components/Homepage/SectionTwo/SectionTwo'
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
-import { easeOut } from 'framer-motion';
 import SectionThree from '@/components/Homepage/SectionThree/SectionThree'
 import SectionFour from '@/components/Homepage/SectionFour/SectionFour'
-import SectionFive from '@/components/Homepage/SectionFive/SectionFive'
 import SectionFive_2 from '@/components/Homepage/SectionFive/SectionFive_2'
 
-import SectionFivePhone from '@/components/Homepage/SectionFive/SectionFivePhone'
 import SectionSix from '@/components/Homepage/SectionSix/SectionSix'
 import SectionTwo_2 from '@/components/Homepage/SectionTwo/SectionTwo_2'
-import Page from './test3/page'
 
 const page = () => {
 
@@ -144,7 +140,7 @@ const page = () => {
   useGSAP(()=> {
 
 
-    let TransitionTimeline_Robot_To_SectionTwo = gsap.timeline({
+    const TransitionTimeline_Robot_To_SectionTwo = gsap.timeline({
       scrollTrigger: {
         trigger: "#section2",
         start: "top 90%",
@@ -202,7 +198,7 @@ const page = () => {
     // width of container full
     // put robot in the middle
     // 
-    let TransitionTimeline_Robot_To_SectionThree = gsap.timeline({
+    const TransitionTimeline_Robot_To_SectionThree = gsap.timeline({
       scrollTrigger: {
         trigger: "#section3",
         start: "60% 100%",
@@ -210,7 +206,7 @@ const page = () => {
         scrub: 0.25,
         // markers: true,
         id: "scrub",
-        onEnter: (self) => {
+        onEnter: () => {
           setRobotMouseTrack(false);
           setRobotSectionId(3);
         },
@@ -286,7 +282,7 @@ const page = () => {
     }, "Section3")
 
 
-    let TransitionTimeline_Robot_To_SectionFour = gsap.timeline({
+    const TransitionTimeline_Robot_To_SectionFour = gsap.timeline({
       scrollTrigger: {
         trigger: "#section4",
         start: "top 80%",
@@ -294,11 +290,11 @@ const page = () => {
         scrub: 0.25,
         // markers: true,
         id: "scrub4",
-        onEnter: (self) => {
+        onEnter: () => {
           setRobotMouseTrack(false);
           setRobotSectionId(4);
         },
-        onEnterBack: (self) => {
+        onEnterBack: () => {
           setRobotMouseTrack(false);
           setRobotSectionId(4);
         },
@@ -370,7 +366,7 @@ const page = () => {
     }, "Section4")
 
 
-    let TransitionTimeline_Robot_To_SectionFive = gsap.timeline({
+    const TransitionTimeline_Robot_To_SectionFive = gsap.timeline({
       scrollTrigger: {
         trigger: "#section5",
         start: "top 80%",
@@ -378,7 +374,7 @@ const page = () => {
         scrub: 0.25,
         // markers: true,
         id: "scrub5",
-        onEnter: (self) => {
+        onEnter: () => {
           setRobotMouseTrack(true);
           setRobotSectionId(5);
         },
@@ -451,7 +447,7 @@ const page = () => {
 
 
 
-    let TransitionTimeline_Robot_To_SectionSix = gsap.timeline({
+    const TransitionTimeline_Robot_To_SectionSix = gsap.timeline({
       scrollTrigger: {
         trigger: "#section6",
         start: "top 100%",
@@ -482,6 +478,39 @@ const page = () => {
     .to("#RobotSceneContainer", {
         left: window.innerWidth*0.4,
     }, "Section6")
+
+
+    // Nav bar link scroll
+    const links = gsap.utils.toArray("nav a");
+    links.forEach(a => {
+      const element = document.querySelector(a.getAttribute("href")),
+          linkST = ScrollTrigger.create({
+                trigger: element,
+                start: "-20% top",
+                end: "-150% top",
+                // markers: true,
+
+              });
+
+              ScrollTrigger.create({
+                trigger: element,
+                start: "0 0",
+                end: "top top",
+                // markers: true,
+
+                onToggle: self => self.isActive && setActive(a)
+              });
+      a.addEventListener("click", e => {
+        e.preventDefault();
+        gsap.to(window, {duration: 1, scrollTo: linkST.start, overwrite: "auto"});
+      });
+    });
+    
+    function setActive(link) {
+      console.log(link);
+      links.forEach(el => el.classList.remove("active"));
+      link.classList.add("active");
+    }
 
   },[]);
 
@@ -522,17 +551,19 @@ const page = () => {
           <SectionThree/>
         </section>
 
-        <section className='w-full min-h-[100vh] max-w-[1500px] px-[0rem] lg:px-[4rem] mx-auto'>
+        <section className='w-full min-h-[100vh] max-w-[1500px] px-[0rem] lg:px-[4rem] mx-auto
+        my-[10rem]'>
           <SectionFour/>
         </section>
         
-        <section className='w-full min-h-[100vh] max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto'>
+        <section className='w-full min-h-[100vh] max-w-[1500px] px-[2rem] lg:px-[4rem] mx-auto
+        mb-[10rem]'>
           {/* <SectionFive/> */}
           {/* <SectionFivePhone/> */}
           <SectionFive_2/>
         </section>
 
-        <section className='w-full h-[70vh] max-w-[1500px] mb-[5rem] px-[2rem] lg:px-[4rem] mx-auto'>
+        <section className='w-full min-h-[70vh] max-w-[1500px] mb-[5rem] px-[2rem] lg:px-[4rem] mx-auto'>
           <SectionSix/>
         </section>
 

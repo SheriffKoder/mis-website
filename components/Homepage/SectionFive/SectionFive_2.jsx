@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect } from 'react'
-import Image from 'next/image';
+// import Image from 'next/image';
 import { sectionFive_cardsContent } from '@/constants';
 
 import { useGSAP } from "@gsap/react";
@@ -22,7 +22,7 @@ https://github.com/HoanghoDev/slider_1
 */
 
 
-const sectionFour_2 = () => {
+const SectionFive_2 = () => {
 
     useEffect(()=> {
 
@@ -33,10 +33,10 @@ const sectionFour_2 = () => {
         let carouselDom = document.querySelector('.carousel');
         let SliderDom = carouselDom.querySelector('.carousel .list');
         let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
-        let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
-        let timeDom = document.querySelector('.carousel .time');
+        // let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+        // let timeDom = document.querySelector('.carousel .time');
 
-        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        // thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
         let timeRunning = 500;
         let timeAutoNext = 500;
 
@@ -120,7 +120,7 @@ const sectionFour_2 = () => {
 
 
   return (
-    <div className='h-[90vh] md:h-[70vh] w-full flex items-center justify-center md:flex-row flex-col
+    <div className='h-[1000px] md1:h-[800px] md2:h-[1000px] lg:h-[800px] w-full flex items-center justify-center xl:flex-row flex-col
     gap-[4rem]' id="section5">
         <div className='mb-auto'>
             <h1 className='Heading1 translate-x-[-10rem] opacity-0' id="sectionFive_header">What our customers say</h1>
@@ -131,18 +131,32 @@ const sectionFour_2 = () => {
         <div className="list">
 
             {sectionFive_cardsContent.map((card, index)=> (
-              <div className="item bg-[#0a0a0a] border border-[#252525] rounded-[10px]">
+              <div className="item bg-[#0a0a0a] border border-[#252525] rounded-[10px]
+              "
+              id={card.name}
+              key={"sectionFive_cardsContent"+index}>
                 {/* <div className=''> */}
                     {/* <div className='absolute w-full h-full top-0 left-0 bg-black'/> */}
                     {/* <div className='opacity-50'> */}
                         {/* <Image alt="" src={`/image/img1.jpg`} fill/> */}
                     {/* </div> */}
                 {/* </div> */}
-                <div className="content flex flex-col gap-2">
+                <div className="content flex flex-col gap-2 w-full">
                     <div className="author">{card.company}</div>
-                    <div className="title">{card.name}</div>
+                    <div className="title text-[1.5rem] md2:text-[min(40px,8vw)]">{card.name}</div>
+
+                    <div className='flex flex-row gap-2 mb-[1rem] services flex-wrap'>
+                    {
+                        card.services.map((service)=> (
+                            <div className="opacity-50 text-sm px-3 py-2 border-[3px] rounded-[50px] min-w-[100px] text-center"
+                            key={"card.services"+index}>{service}</div>
+                        ))
+                    }
+                    </div>
+
+
                     <div className="des">
-                        <p className='opacity-50'>
+                        <p className=' Paragraph1 md2:Paragraph3'>
                          {card.comment}
                         </p>
                     </div>
@@ -172,22 +186,41 @@ const sectionFour_2 = () => {
             </div> */}
 
         </div>
+
+
         <div className="thumbnail">
+            {sectionFive_cardsContent.map((card, index)=> (
+                <>
+                {(sectionFive_cardsContent[0].name !== card.name) && (
+                    <div className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'} border rounded-[5px] item`}
+                    id={"thumb "+card.name+index}
+                    key={"sectionFive_cardsContent thumb"+index}>
+                    {/* <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/> */}
+                        <div className="content">
+                            <div className="title">
+                                {card.name}
+                            </div>
+                            <div className="description">
+                                {card.company}
+                            </div>
+                        </div>
+                    </div>
+                )}       
+                </>
+            ))}
 
-
-        {sectionFive_cardsContent.map((card, index)=> (
-                <div className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'} border rounded-[5px] item`}>
-                {/* <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/> */}
+            <div className={`CardStyle_bg_2 border rounded-[5px] item`}
+            id={"thumb "+sectionFive_cardsContent[0].name+0}>
+            {/* <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/> */}
                 <div className="content">
                     <div className="title">
-                        {card.name}
+                        {sectionFive_cardsContent[0].name}
                     </div>
                     <div className="description">
-                        {card.company}
+                        {sectionFive_cardsContent[0].company}
                     </div>
                 </div>
             </div>
-            ))}
 
 {/* 
                 <div className="item">
@@ -217,4 +250,4 @@ const sectionFour_2 = () => {
   )
 }
 
-export default sectionFour_2
+export default SectionFive_2

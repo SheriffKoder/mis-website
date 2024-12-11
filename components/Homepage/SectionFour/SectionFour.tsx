@@ -228,7 +228,7 @@ const SectionFour = () => {
     px-[2rem] py-[4rem] bg-[#000000b4] rounded-b-none rounded-[20px] lg:rounded-[10px] lg:rounded-b-[10px] glass_bg2'
     id="section4" style={{background: 'background: rgba(0, 0, 0, 0.2)'}}>
         <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem]'>
-            <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionFour_header">{allText.sectionFour.header}</h2>
+            <h2 className='Heading3 translate-y-[50px] opacity-0 mb-4' id="sectionFour_header">{allText.sectionFour.header}</h2>
             <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionFour_para">{allText.sectionFour.paragraph}</p>
         </div>
 
@@ -236,10 +236,10 @@ const SectionFour = () => {
         {sectionFour_cardsContent.map((card, index)=> (
             <div className={` ${(index % 2 === 0) ? 'md2:mr-auto' : 'md2:ml-auto'} 
             sectionFour_card mt-[2rem] flex flex-col gap-4 justify-start items-center1`}
-            id={`sectionFourCards_container${index+1}`} key={"section 4 card "+index}>
+            id={`sectionFourCards_container${index+1}`} key={"sectionFour_cardsContent"+index}>
                 <div className='flex flex-row gap-8 items-center justify-center'>
                     
-                    <div className='Heading1 w-[100px] border-r flex items-center justify-center
+                    <div className='Heading2 w-[100px] border-r flex items-center justify-center
                     translate-y-[3rem] opacity-0 gradient_text'
                     id={`sectionFourCard_${index+1}_num`}>
                         {card.number}
@@ -247,7 +247,7 @@ const SectionFour = () => {
 
                     <div className='w-full max-w-[300px] lg:max-w-[500px] flex flex-col gap-2 translate-y-[-3rem] opacity-0'
                     id={`sectionFourCard_${index+1}_content`}>    
-                        <div className='Heading3'>{card.name}</div>
+                        <div className='text-[1.5rem] md2:text-[min(40px,8vw)]'>{card.name}</div>
                         <div className='Paragraph1'>{card.content}</div>    
                     </div>
 

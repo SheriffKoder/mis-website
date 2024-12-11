@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
@@ -135,6 +135,27 @@ which will wrap the children in the layout */
 
 }
 
+.active::after {
+  content: "";
+
+  width: 40px;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  /* border-radius: 50%; */
+  bottom: -0.75rem;
+  left: 50%;
+  transform: scale(0) translateX(-50%);
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+
+  transform: scale(1) translateX(-50%);
+    /* neon */
+    box-shadow:  0 0 1px #ffffff,
+    0 0 4px #ffffff;
+
+
+}
+
 
 /* https://www.youtube.com/shorts/IZWoZZwRw14?app=desktop */
 .neon_button {
@@ -177,13 +198,7 @@ flex justify-start flex-col pb-8 transition-all duration-75 ease-linear
 
 }
 
-.CardStyle h3 {
-  @apply text-[2rem]
-}
 
-.CardStyle p {
-  @apply  text-[1rem]
-}
 
 .CardStyle_bg_1 {
 @apply hover:bg-[rgba(23,201,255,0.15)] bg-[rgba(23,201,255,0.08)] border-[rgba(23,216,255,0.17)]
@@ -377,30 +392,51 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 /* Text */
 
 .Heading1 {
-  @apply font-normal text-[13vw] leading-[12vw] md:text-[min(110px,8vw)] md:leading-[min(100px,7vw)] Montserrat text_shadow_1
-  color1
+  @apply text-[13vw] leading-[12vw] md:text-[min(110px,8vw)] md:leading-[min(100px,7vw)] Montserrat text_shadow_1
+  color1 font-semibold text_shadow_2
 }
 
 /* section header */
 .Heading2 {
-  @apply font-normal text-[8vw] md:text-[min(55px,4vw)] Montserrat text_shadow_1
-  color1
+  @apply font-normal text-[10vw] leading-[12vw] md:text-[min(110px,8vw)] md:leading-[min(100px,7vw)] Montserrat text_shadow_1
+  color1 text_shadow_2
 }
 
 /* card header */
 .Heading3 {
-  @apply font-normal text-[min(4vw,18px)] md:text-[min(24px,3vw)] text_shadow_1
-  color1
+  @apply font-normal text-[10vw] leading-[12vw] md:text-[min(65px,8vw)] md:leading-[min(70px,7vw)] 
+  Montserrat
+  color1 text_shadow_2
+}
+
+.Heading4 {
+  @apply font-normal text-[10vw] leading-[12vw] md:text-[min(40px,8vw)] md:leading-[min(45px,7vw)] 
+  Montserrat
+  color1 text_shadow_2
 }
 
 .Paragraph1 {
-  @apply font-extralight text-[3vw] leading-[3vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(16px,2vw)] md:leading-[min(22px,2vw)] text_shadow_2
-  Poppins color2
+  @apply 
+  text-[min(12px,3vw)]
+
+  md:text-[min(20px,1.5vw)] md:leading-[min(22px,1.5vw)] 
+  Poppins color2 text_shadow_2
+}
+
+.ButtonText {
+  @apply 
+  text-[min(12px,3vw)] leading-[min(12px,3vw)]
+
+  md:text-[min(18px,1.5vw)] md:leading-[min(22px,1.5vw)] 
+  Poppins
 }
 
 .Paragraph2 {
-  @apply font-extralight text-[min(3vw,13px)] leading-[5vw] sm:text-[2vw] sm:leading-[2.5vw] md:text-[min(14px,2vw)] md:leading-[min(22px,2vw)] text_shadow_1
-  Poppins color1
+  @apply 
+  text-[min(12px,3vw)]
+
+  md:text-[min(20px,1.5vw)] md:leading-[min(22px,1.5vw)] 
+  Poppins text_shadow_2
 }
 
 .gradient_text {
@@ -422,7 +458,7 @@ background: linear-gradient(312deg, rgba(23,217,255,0.4) 0%, rgba(144,70,217,0.4
 }
 
 .GradientButton:hover {
-  box-sizing:content-box;
+  box-sizing:border-box;
   border: 3px solid #9046D9;
 }
 
@@ -454,7 +490,7 @@ button {
 }
 
 .text_shadow_2 {
-  text-shadow: 0px 0px 8px rgba(0,0,0,0.05);
+  text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
 }
 
 .Poppins {
@@ -673,20 +709,20 @@ button {
   max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
-  padding-right: 30%;
+  padding-right: 0;
   box-sizing: border-box;
   color: #fff;
   text-shadow: 0 5px 10px #0004;
 }
 .carousel .list .item .author{
   font-weight: bold;
-  letter-spacing: 5px;
+  /* letter-spacing: 5px; */
 }
 .carousel .list .item .title,
 .carousel .list .item .topic{
-  font-size: 5em;
+  /* font-size: 3em; */
   font-weight: bold;
-  line-height: 1.3em;
+  /* line-height: 1.3em; */
 }
 .carousel .list .item .topic{
   color: #17D9FF;
@@ -781,13 +817,13 @@ button {
   z-index: 1;
 }
 
-/* animation text in first item */
+/* animation text - in first item */
 
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
 .carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
+.carousel .list .item:nth-child(1) .content .services
 {
   transform: translateY(50px);
   filter: blur(20px);
@@ -801,16 +837,18 @@ button {
       opacity: 1;
   }
 }
+
+/* between text animation delay */
 .carousel .list .item:nth-child(1) .content .title{
   animation-delay: 1.2s!important;
 }
 .carousel .list .item:nth-child(1) .content .topic{
   animation-delay: 1.4s!important;
 }
-.carousel .list .item:nth-child(1) .content .des{
+.carousel .list .item:nth-child(1) .content .services{
   animation-delay: 1.6s!important;
 }
-.carousel .list .item:nth-child(1) .content .buttons{
+.carousel .list .item:nth-child(1) .content .des{
   animation-delay: 1.8s!important;
 }
 /* create animation when next click */
@@ -963,4 +1001,37 @@ button {
 
   bg-[rgba(255,255,255,0.02)]
   px-2
+}
+
+
+
+
+
+
+.panel-text2509, .panel2509 {
+
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+ 
+}
+
+
+.panel-text2509 {
+
+  transform:translateY(100%);
+  opacity: 0;
+
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 900;
+  text-align:center;
+  background-color: #070707;
+
+
 }

@@ -81,9 +81,9 @@ const BrandSlider = () => {
     id=""
     >
         <span ref={firstText} className="relative left-[0]"> 
-            <div className='w-[100vw] h-[50px] lg:h-[75px] 
+            <div className='w-[150vw] md:w-[100vw] h-[50px] lg:h-[75px] 
             flex flex-row justify-around items-center'>
-                <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
+                <Image src="/Logo/logo2.png.png" alt="" height={77} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
@@ -93,10 +93,10 @@ const BrandSlider = () => {
         </span>
 
 
-        <span ref={secondText} className="absolute left-[100vw]"> 
-        <div className='w-[100vw] h-[50px] lg:h-[75px] 
+        <span ref={secondText} className="absolute left-[150vw] md:left-[100vw]"> 
+        <div className='w-[150vw] md:w-[100vw] h-[50px] lg:h-[75px] 
             flex flex-row justify-around items-center'>
-                <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
+                <Image src="/Logo/logo2.png.png" alt="" height={77} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>
                 <Image src="/Logo/logo2.png.png" alt="" height={50} width={100}></Image>

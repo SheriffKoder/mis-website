@@ -96,12 +96,12 @@ const Hero = () => {
           If you can imagine it, we can make it a reality.
         </p>
 
-        <div className='flex flex-row gap-4 Paragraph1 relative w-[375px]'>
+        <div className='flex flex-col md:flex-row gap-2 md:gap-4 Paragraph1 relative w-full'>
           <span id="hero_button1">
             <ColoredButton text={"Get started"} hero={true}/>
           </span>
             
-          <span id="hero_button2" className='absolute right-0'>
+          <span id="hero_button2" className=''>
             <GradientButton text={"Explore all features"} />
           </span>
 

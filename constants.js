@@ -14,10 +14,10 @@ h3 card header/name
 */
 
 let nav_links = [
-    { text: "Services", href: "#services", aria: "know more about the services we offer"},
+    { text: "Services", href: "#section2", aria: "know more about the services we offer"},
     // { text: "Measures", href: "#measures", aria: "our achievements"},
-    { text: "How it works", href: "#actionPlan", aria: "our action plan"},
-    { text: "Testimonials", href: "#testimonials", aria: "what our clients says about us"},
+    { text: "How it works", href: "#section4", aria: "our action plan"},
+    { text: "Testimonials", href: "#section5", aria: "what our clients says about us"},
 ]
 
 const allText = {
@@ -112,42 +112,51 @@ const sectionFive_cardsContent = [
   {
     name: "John Smith 1",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1 SSV", "Service2"]
   },
   {
     name: "John Smith 2",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1 opc.", "Service2", "Service1", "Service2 Develop"]
+
   },
   {
     name: "John Smith 3",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2 Develop"]
   },
   {
     name: "John Smith 4",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2"]
   },
   {
     name: "John Smith 5",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2"]
   },
   {
     name: "John Smith 6",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2"]
   },
   {
     name: "John Smith 7",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2"]
   },
   {
     name: "John Smith 8",
     company: "Company Co.",
-    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps"
+    comment: "Very professional team. The fourth step which contains many steps, The fourth step which contains many steps",
+    services: ["Service1", "Service2"]
   },
 ]
 

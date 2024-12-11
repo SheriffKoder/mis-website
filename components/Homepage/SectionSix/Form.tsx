@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useRef } from "react"
+import React, { useState } from "react"
 import { ChangeEventHandler, FormEventHandler } from "react";
 
 
@@ -16,7 +16,7 @@ const Form = () => {
 
   const { name, email, phone, content } = emailBody;
 
-  const messageContainer_inquiry = useRef<HTMLDivElement>(null)
+  // const messageContainer_inquiry = useRef<HTMLDivElement>(null)
 
   const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement > = ({ target }) => {
 

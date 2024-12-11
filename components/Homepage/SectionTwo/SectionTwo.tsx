@@ -62,7 +62,7 @@ const SectionTwo = () => {
   return (
     <div className='h-full flex flex-col pt-[3vw] container2' id="section2">
 
-        <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem] md:mt-[2rem]'>
+        <div className='flex flex-col gap-4 text-center lg:text-start max-w-[1500px] mx-auto mb-[2rem] md:mt-[2rem]'>
             <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionTwo_header">{allText.sectionTwo.header}</h2>
             <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionTwo_para">{allText.sectionTwo.paragraph}</p>
         </div>
@@ -72,7 +72,7 @@ const SectionTwo = () => {
             <h3>Card Header</h3>
             <p>Card Text</p>
         </div> */}
-        <div className='md:pl-[20vw] md:gap-[3vw]'>
+        <div className='md:pl-[min(200px,20vw)] md:gap-[3vw]'>
             <HorizontalCards/>
         </div>
 

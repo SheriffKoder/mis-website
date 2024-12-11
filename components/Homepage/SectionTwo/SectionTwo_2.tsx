@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
 import {allText} from "@/constants";
-import HorizontalCards from './HorizontalCards';
 
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
@@ -60,7 +59,7 @@ const SectionTwo_2 = () => {
   return (
     <div className='w-full h-full relative' id="section22">
         
-        <div className='h-[20%] flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem] md:mt-[2rem]'>
+        <div className='h-[20%] flex flex-col gap-4 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem] md:mt-[2rem]'>
             <h2 className='Heading2 translate-y-[50px] opacity-0' id="sectionTwo_header">{allText.sectionTwo.header}</h2>
             <p className='Paragraph1 pl-[0.5rem] translate-y-[30px] opacity-0' id="sectionTwo_para">{allText.sectionTwo.paragraph}</p>
         </div>
@@ -70,7 +69,7 @@ const SectionTwo_2 = () => {
         {
                 sectionTwo_cardsContent.map((cardContent, index)=> (
                     <div className=' 
-                    ' key={index}>
+                    ' key={"sectionTwo_cardsContent"+index}>
                         
 
                         <div
@@ -83,17 +82,14 @@ const SectionTwo_2 = () => {
                             ">
 
                                 <div className="">
-                                    <h3 className="">{cardContent.name}</h3>
+                                    <h3 className="Heading3">{cardContent.name}</h3>
                                 </div>
-                                <p className="">
+                                <p className="Paragraph1">
                                     {cardContent.content}
                                 </p>
-                                {/* <div className="box-1 w-[100px] h-[100px] bg-black">
 
-                                </div> */}
                             </div>
                         </div>
-                        {/* border border-[rgba(255,255,255,0.06)] */}
 
                         
 

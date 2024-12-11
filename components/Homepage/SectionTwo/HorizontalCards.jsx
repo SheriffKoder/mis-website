@@ -16,7 +16,7 @@ const HorizontalCards = () => {
 
     let sections2 = gsap.utils.toArray(".section2");
 
-    let scrollTween = gsap.to(sections2, {
+    gsap.to(sections2, {
         xPercent: -100 * (sections2.length -1),
         ease: "none", // progress evenly distributed over time, important
         scrollTrigger: {
@@ -86,7 +86,7 @@ const HorizontalCards = () => {
                 sectionTwo_cardsContent.map((cardContent, index)=> (
                     <div className='section2 min-w-[min(70vw,400px)] h-[min(100vw,400px)]  md:min-w-[min(60vw,600px)] md:h-[min(60vw,500px)] md:ml-[1rem] 
                     flex items-center translate-y-[50px] opacity-0
-                    ' key={index}>
+                    ' key={"sectionTwo_cardsContent"+index}>
                         
 
                         <div
@@ -99,9 +99,9 @@ const HorizontalCards = () => {
                             ">
 
                                 <div className="">
-                                    <h3 className="">{cardContent.name}</h3>
+                                    <h3 className="Heading4">{cardContent.name}</h3>
                                 </div>
-                                <p className="">
+                                <p className="Paragraph1">
                                     {cardContent.content}
                                 </p>
                                 {/* <div className="box-1 w-[100px] h-[100px] bg-black">

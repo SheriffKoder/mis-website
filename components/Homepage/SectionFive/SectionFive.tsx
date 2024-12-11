@@ -1,11 +1,9 @@
 "use client"
 import React from 'react'
-import {allText, sectionFour_cardsContent} from "@/constants";
 
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap'
 import {ScrollTrigger, ScrollToPlugin} from "gsap/all";
-import { easeOut } from 'framer-motion';
 
 
 const SectionFive = () => {

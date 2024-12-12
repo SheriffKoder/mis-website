@@ -26,10 +26,9 @@ const HorizontalCards = () => {
             // slide in automatically when middle of the section
             // snap: 1/ (sections2.length -1),
             // the end function gets recalled each time the viewport resizes
-            // markers: true,
             end: ()=> "+="+document.querySelector(".container2").offsetWidth,
             // markers: true,
-            start: "60% center",
+            start: "65% center",
             end: "bottom top"
         }
     })
@@ -90,13 +89,16 @@ const HorizontalCards = () => {
                         
 
                         <div
-                        className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'}
-                        CardStyle h-[90%] w-[97%] rounded-lg
+                        className={`
+                        CardStyle_cont h-[90%] w-[97%] rounded-lg grayscale-[0.7] hover:grayscale-0
+                        relative
                         `}
                         >
-                            <div className=" rounded-lg
+                            <div className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'}
+                            rounded-lg
                             flex flex-col p-[0px] md:p-[2rem] gap-[1.5rem] text-white  valueCard2
-                            ">
+                            CardStyle_glass CardStyle_text
+                            `}>
 
                                 <div className="">
                                     <h3 className="Heading4">{cardContent.name}</h3>

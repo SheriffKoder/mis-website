@@ -9,17 +9,15 @@ const ColoredButton = ({text, hero}:{text:string, hero:boolean}) => {
       ${hero && ('gap-2 hover:gap-3')}
       `}>
 
-        <span>
-
-      {text}
+      <span>
+        {text}
       </span>
 
       <span>
-
-      {hero && (
-           ">"
+        {hero && (
+            ">"
         )}
-        </span>
+      </span>
     </button>
   )
 }

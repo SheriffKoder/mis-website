@@ -5,6 +5,8 @@ import ThemeToggler from "@/components/BaseEffects/ThemeToggler";
 import { ThemeProvider } from "@/providers/theme-provider";
 
 import Navbar from "@/components/Navbar";
+import { footer_links } from "@/constants";
+import Link from "next/link";
 
 
 export const metadata: Metadata = {
@@ -39,7 +41,24 @@ export default function RootLayout({
           </div>
 
 
-          <footer className="w-full h-[150px] bg-slate-800 z-[-1]"></footer>
+          <footer className="w-full h-[150px] bg-black z-[-1] border-t border-[#181818]
+          flex">
+            <nav className="w-full max-w-[1500px] flex items-center justify-center mx-auto">
+            <ul className='flex flex-row justify-evenly gap-[max(4vw,2rem)]
+            '>
+                {
+                footer_links.map((link, index)=> (
+                    <li key={"nav_link "+index}>
+                        <Link href={link.href}  aria-label={link.aria}
+                        className=" ActiveNavLink relative color2">{link.text}</Link>
+                    </li>
+                ))
+                }
+            </ul>
+
+            </nav>
+
+          </footer>
 
 
         </ThemeProvider>

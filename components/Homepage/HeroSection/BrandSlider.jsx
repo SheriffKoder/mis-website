@@ -75,7 +75,8 @@ const BrandSlider = () => {
 
   return (
 
-    <div ref={slider} className="relative whitespace-nowrap flex flex-row"
+    <div ref={slider} className="relative whitespace-nowrap flex flex-row
+    hover:cursor-pointer z-[1]"
     onMouseEnter={()=> factor.current = 0.01}
     onMouseLeave={()=> factor.current = 0.025}
     id=""

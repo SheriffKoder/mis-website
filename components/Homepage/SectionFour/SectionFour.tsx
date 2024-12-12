@@ -186,7 +186,7 @@ const SectionFour = () => {
             scrollTrigger: {
                 trigger: "#section4",
                 // scrub: true,
-                start: "80% 90%",
+                start: "60% 80%",
                 // end: "50% 50%",
                 markers: false,
 
@@ -204,7 +204,7 @@ const SectionFour = () => {
             scrollTrigger: {
                 trigger: "#section4",
                 // scrub: true,
-                start: "80% 90%",
+                start: "60% 80%",
                 // end: "50% 50%",
                 markers: false,
 
@@ -224,7 +224,7 @@ const SectionFour = () => {
 
 
   return (
-    <div className=' flex flex-col items-center w-full h-full max-w-[1500px] mx-auto
+    <div className='flex flex-col items-center w-full h-full max-w-[1500px] mx-auto
     px-[2rem] py-[4rem] bg-[#000000b4] rounded-b-none rounded-[20px] lg:rounded-[10px] lg:rounded-b-[10px] glass_bg2'
     id="section4" style={{background: 'background: rgba(0, 0, 0, 0.2)'}}>
         <div className='flex flex-col gap-0 text-center lg:text-start max-w-[1000px] mx-auto mb-[2rem]'>

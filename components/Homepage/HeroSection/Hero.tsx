@@ -6,6 +6,9 @@ import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { easeInOut, easeOut } from 'framer-motion'
 import BrandSlider from './BrandSlider'
+import Link from 'next/link'
+import Image from 'next/image'
+import AppleButton from './AppleButton'
 
 const Hero = () => {
 
@@ -87,7 +90,9 @@ const Hero = () => {
         id="hero_text1">
           <span>Modern</span>
           <span>Intelligence</span>
-          <span>Solutions</span>
+          <span className='relative flex flex-row gap-[1.5rem] items-center justify-center'>Solutions
+           <AppleButton/>
+          </span>
         </h1>
 
         <p className='ml-1 Paragraph1 md:max-w-[50vw] mb-2' id="hero_text2">
@@ -97,13 +102,13 @@ const Hero = () => {
         </p>
 
         <div className='flex flex-col md:flex-row gap-2 md:gap-4 Paragraph1 relative w-full'>
-          <span id="hero_button1">
+          <Link href="#section6" id="hero_button1">
             <ColoredButton text={"Get started"} hero={true}/>
-          </span>
+          </Link>
             
-          <span id="hero_button2" className=''>
+          <Link href="#section2" id="hero_button2" className=''>
             <GradientButton text={"Explore all features"} />
-          </span>
+          </Link>
 
         </div>
 

@@ -13,11 +13,18 @@ h3 card header/name
 
 */
 
-let nav_links = [
+const nav_links = [
     { text: "Services", href: "#section2", aria: "know more about the services we offer"},
     // { text: "Measures", href: "#measures", aria: "our achievements"},
     { text: "How it works", href: "#section4", aria: "our action plan"},
     { text: "Testimonials", href: "#section5", aria: "what our clients says about us"},
+]
+
+const footer_links = [
+  { text: "Services", href: "#section2", aria: "know more about the services we offer"},
+  // { text: "Measures", href: "#measures", aria: "our achievements"},
+  { text: "How it works", href: "#section4", aria: "our action plan"},
+  { text: "Testimonials", href: "#section5", aria: "what our clients says about us"},
 ]
 
 const allText = {
@@ -211,6 +218,7 @@ const goals = [
 module.exports = {
     ...colors,
     nav_links,
+    footer_links,
     backgrounds,
     goals,
     sectionTwo_cardsContent,

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, {useRef} from 'react'
 
 
 import { useGSAP } from "@gsap/react";
@@ -13,7 +14,7 @@ import { sectionThree_cardsContent } from '@/constants';
 
 const SectionThree = () => {
 
-    const circle1Ref = React.useRef<HTMLDivElement|null>(null);
+    const circle1Ref = useRef<HTMLDivElement|null>(null);
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -175,7 +176,7 @@ const SectionThree = () => {
 
 
 
-            <div className='absolute min-w-[200vw] top-[-5rem] h-[200vw] flex items-center justify-center
+            <div className='absolute min-w-[200vw] h-[200vw] flex items-center justify-center
             md:min-h-[70vw] md:min-w-[70vw] md:h-[70vw] md:w-[70vh]'>
             
                 <div className='absolute w-[0px] h-[0px] rounded-full

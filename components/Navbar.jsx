@@ -69,7 +69,7 @@ const Page = () => {
 
 
   return (
-    <div className="z-[99]">
+    <div className="z-[99] relative">
         <div className='main-tool-bar fixed w-full top-0 h-[120px] md:h-[65px] bg-[#000000]
         ButtonText'>
 
@@ -90,17 +90,14 @@ const Page = () => {
             </nav>
 
             <div className="absolute right-[1rem] top-[1rem]">
-                    <div id="nav_main_button">
+                    <Link id="nav_main_button" href="#section6">
                         <ColoredButton text={"Contact"}/>
-                    </div>
+                    </Link>
                 </div >
 
-            <div className="absolute left-[1rem] top-[1rem]">
-                    <button id="logo" className='w-[calc(2rem*1.5)] h-[calc(0.75rem*1.5)] 
-                    lg:w-[calc(2rem*2)] lg:h-[calc(0.75rem*2)] relative'>
-                        <Image src="/Logo/Logo_white.png" alt="company logo" fill ></Image>
-                    </button>
-            </div>
+
+                        <Image src="/Logo/Logo_white.png" alt="company logo 1" 
+                        className='absolute left-[1.5rem] top-[1.5rem] my-auto' width={50} height={25} ></Image>
 
             {/* <div className='w-full h-full flex-row flex justify-between items-center
             px-4'>

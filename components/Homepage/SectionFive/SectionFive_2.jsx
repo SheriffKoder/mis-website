@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 // import Image from 'next/image';
 import { sectionFive_cardsContent } from '@/constants';
 
@@ -24,6 +24,8 @@ https://github.com/HoanghoDev/slider_1
 
 const SectionFive_2 = () => {
 
+    const nextBtn = useRef(null);
+
     useEffect(()=> {
 
         //step 1: get DOM
@@ -38,7 +40,7 @@ const SectionFive_2 = () => {
 
         // thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
         let timeRunning = 500;
-        let timeAutoNext = 500;
+        let timeAutoNext = 7000;
 
         nextDom.onclick = function(){
             showSlider('next');     
@@ -49,7 +51,7 @@ const SectionFive_2 = () => {
         }
         let runTimeOut;
         let runNextAuto = setTimeout(() => {
-            // next.click();
+            nextBtn.current.click();
         }, timeAutoNext)
         function showSlider(type){
             let  SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
@@ -72,7 +74,7 @@ const SectionFive_2 = () => {
 
             clearTimeout(runNextAuto);
             runNextAuto = setTimeout(() => {
-                // next.click();
+                nextBtn.current.click();
             }, timeAutoNext)
         }
     },[])
@@ -83,6 +85,23 @@ const SectionFive_2 = () => {
     useGSAP(()=> {
 
         gsap.to("#sectionFive_header", {
+            scrollTrigger: {
+                trigger: "#section5",
+                // scrub: true,
+                start: "top 60%",
+                end: "10% 50%",
+                // markers: false,
+
+            },
+            x: 0, //normal value
+            opacity: 1,
+            duration: 1,
+            delay: 0,
+            ease:  easeOut,
+
+        });
+
+        gsap.to("#sectionFive_element", {
             scrollTrigger: {
                 trigger: "#section5",
                 // scrub: true,
@@ -121,12 +140,12 @@ const SectionFive_2 = () => {
 
   return (
     <div className='h-[1000px] md1:h-[800px] md2:h-[1000px] lg:h-[800px] w-full flex items-center justify-center xl:flex-row flex-col
-    gap-[4rem]' id="section5">
-        <div className='mb-auto'>
+    gap-[4rem] max-w-[1500px]' id="section5">
+        <div className='mb-auto pt-[5rem] lg:pt-0'>
             <h1 className='Heading1 translate-x-[-10rem] opacity-0' id="sectionFive_header">What our customers say</h1>
 
         </div>
-      <div className='w-full h-full'>
+      <div className='w-full h-full translate-x-[10rem] opacity-0' id="sectionFive_element">
         <div className="carousel">
         <div className="list">
 
@@ -147,9 +166,10 @@ const SectionFive_2 = () => {
 
                     <div className='flex flex-row gap-2 mb-[1rem] services flex-wrap'>
                     {
-                        card.services.map((service)=> (
-                            <div className="opacity-50 text-sm px-3 py-2 border-[3px] rounded-[50px] min-w-[100px] text-center"
-                            key={"card.services"+index}>{service}</div>
+                        card.services.map((service, index)=> (
+                            <div className="text-sm px-3 py-2 border-[1px] rounded-[10px] min-w-[100px] text-center
+                            accent1 border-[#17D9FF] grayscale opacity-80 hover:grayscale-0 cursor-pointer"
+                            key={"card services"+Math.random()}>{service}</div>
                         ))
                     }
                     </div>
@@ -192,11 +212,12 @@ const SectionFive_2 = () => {
             {sectionFive_cardsContent.map((card, index)=> (
                 <>
                 {(sectionFive_cardsContent[0].name !== card.name) && (
-                    <div className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'} border rounded-[5px] item`}
+                    <div className={`rounded-[5px] item
+                    CardStyle_cont overflow-hidden`}
                     id={"thumb "+card.name+index}
-                    key={"sectionFive_cardsContent thumb"+index}>
+                    key={"sectionFive_cardsContent thumb"+Math.random()}>
                     {/* <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/> */}
-                        <div className="content">
+                        <div className={`${index % 2 === 0 ? 'CardStyle_bg_1' : 'CardStyle_bg_2'} border content CardStyle_glass`}>
                             <div className="title">
                                 {card.name}
                             </div>
@@ -209,11 +230,11 @@ const SectionFive_2 = () => {
                 </>
             ))}
 
-            <div className={`CardStyle_bg_2 border rounded-[5px] item`}
+            <div className={`rounded-[5px] item CardStyle_cont overflow-hidden`}
             id={"thumb "+sectionFive_cardsContent[0].name+0}>
             {/* <Image alt="" src={`/image/img1.jpg`} width={200} height={400}/> */}
-                <div className="content">
-                    <div className="title">
+            <div className={`CardStyle_bg_1 border content CardStyle_glass`}>
+            <div className="title">
                         {sectionFive_cardsContent[0].name}
                     </div>
                     <div className="description">
@@ -239,7 +260,7 @@ const SectionFive_2 = () => {
 
         <div className="arrows">
             <button id="prev">prev</button>
-            <button id="next">next</button>
+            <button id="next" ref={nextBtn}>next</button>
         </div>
         <div className="time"></div>
         </div>
